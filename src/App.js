@@ -1,6 +1,8 @@
 import React from 'react';
+import Results from './Results'
 
-const mapsAPIKey = 'AIzaSyA2pbng72aHFW9jfZ7wmXT8H12MNpTerW8';
+
+const mapsAPIKey = 'AIzaSyC6FqHjgnVXKVBLaFq-o28f77NjQXeBeJI';
 const geocodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?';
 
 
@@ -11,7 +13,7 @@ class App extends React.Component {
 		this.state = {
 			searchTerm: '',
 			searchCoord: {},
-			tripData: [],
+			tripData: {},
 		}
 	}
 
@@ -39,6 +41,7 @@ class App extends React.Component {
 	termConvert(searchTerm, searchCoordUpdate) {
 		let searchURL = geocodeURL + `address=${encodeURIComponent(searchTerm)}&key=${mapsAPIKey}`;
 		fetch(searchURL)
+	
 			.then(response => {
 				if (response.ok) {
 					return response.json();
@@ -46,9 +49,7 @@ class App extends React.Component {
 				throw new Error(response.statusText)
 			})
 			.then(responseJSON => {
-				// Define variable for object returned from geocode API {lat: num, lng: num}
-				let searchCoord = responseJSON.results[0].geometry.location;
-				// send the coordinates to fetch the data from Triposo
+				let searchCoord = responseJSON.results[0].geometry.location
 				this.searchCoordUpdate(searchCoord)
 			})
 
@@ -57,6 +58,7 @@ class App extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		this.termConvert(this.state.searchTerm);
+		console.log(this.state.searchTerm)
 	}
 
 // fetch the triposo data for the hughlights
@@ -69,11 +71,11 @@ class App extends React.Component {
 				}
 				return response.json();
 			})
-			.then(results => {
-				console.log(results)
+			.then(data => {
+				console.log(data)
 				this.setState({
-					tripData: results
-				})
+					tripData: data.results[0].pois
+			})
 			})
 			.catch(err => {
 				console.log(err);
@@ -82,7 +84,9 @@ class App extends React.Component {
 
 	render() {
 		return ( 
+						
 			<main className = 'App' >
+
 				<form onSubmit = {e => this.handleSubmit(e)} >
 					<div className = "search-section top" >
 						<input required className = "search__input"
@@ -100,7 +104,12 @@ class App extends React.Component {
 						</button > 
 					</div> 
 				</form> 
-			</main>
+<Results 
+itemsDisplay={this.state.tripData}
+/>
+	
+		</main>
+
 		);
 	}
 }
