@@ -1,4 +1,6 @@
 import React from 'react';
+import TokenService from './token-service';
+import config from './config'
 
 
 
@@ -6,37 +8,45 @@ class Results extends React.Component {
 		constructor(props) {
 			super(props);
 			this.state = {
-			
 				snippet: '',
 				name: '',
-				po_id:''
+				poi_id:'',
+				user_id:''
 			}
+			const newuserid = TokenService.getUserId('userid');
+			const currentToken = TokenService.getAuthToken();
+console.log(newuserid)
 		}
-		updatetravelData () {
-			let travelData ={ 
-					poi_id: this.state.id,
-					name: this.state.name,
-					snippet: this.state.snippet
-
-			}
-			this.postTravelData(travelData);
-						console.log(travelData)
-
-				}
-	
+	// handle the form submission
 		handleSubmit(e) {
 			e.preventDefault();
-	this.updatetravelData();
-			
+			this.updatetravelData();	
 		}
 	
-	postTravelData(travelData) {
+	
+	//updates the data thats in the currents state to what user clicked on and calls the post finction 
+		updatetravelData () {
+			let travelData = { 
+				poi_id: this.state.id,
+				name: this.state.name,
+				snippet: this.state.snippet,
+				user_id: TokenService.getUserId('userid')
+				
+			}
+			console.log(travelData)
+			this.postTravelData(travelData);
+		}
+	
+	
+	// post the data that was chosen by the user to the DB
+		postTravelData(travelData) {
+			const newJwt = this.currentToken
 					fetch(`http://localhost:8000/listTravel`, {
 					method: 'POST',
-						
 					body: JSON.stringify(travelData),
 					headers: {
-						'Content-Type': 'application/json'
+						'Content-Type': 'application/json',
+						'Authorization': `bearer ${TokenService.getAuthToken()}`
 					}
 				})
 
@@ -48,45 +58,43 @@ class Results extends React.Component {
 							// then throw it
 							throw error
 						})
+						
 					}
 				})
-
+			alert('Added to Bucket List')
 		}
 		
 	
-
+// displays the API result + updates the current state on Add to bucket list button click
 	renderResults() {
 		const tripData= this.props.itemsDisplay
-		if (tripData.length > 0) {		
-        const tripDataResults = this.props.itemsDisplay.map((items, index) => {
+			if (tripData.length > 0) {		
+        	const tripDataResults = this.props.itemsDisplay.map((items, index) => {
         return (
-		<form onSubmit = {e => this.handleSubmit(e)}>
-          	<li key={index}>
-					<input type="text"
-							value={items.id}  /> 
+			<form onSubmit = {e => this.handleSubmit(e)}>
+          		<li key={index}>
 					<h2>{items.name} </h2> 
 					<h2>{items.snippet} </h2>
-					<h2>{items.id} </h2>
 					<button type="submit" onClick={() => this.setState({id:items.id,name:items.name,snippet:items.snippet})}> Add to bucket list </button>
+
+		  		</li>
+			</form>
+			);
+    	});
 			
-		  </li>
-		//	</form>
-        
-        );
-    });
-			
-			return (
+		return (
 				<div>
-			{tripDataResults}
-			</div>
+					{tripDataResults}
+				</div>
 			);
 		}
 	}
 	
+	
 	render() {
 		return(
 			<div>
-			{this.renderResults()}
+				{this.renderResults()}
 			</div>
 		)
 	}
