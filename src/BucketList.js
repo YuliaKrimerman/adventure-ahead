@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
+import TokenService from './token-service';
 
 export default class BucketList extends Component{
 			constructor(props) {
 			super(props);
 			this.state = {
 				data: [],
-			
+				user_id:''
 			}
 		}
-	// post the data that was chosen by the user to the DB
+	
+
 	
 	fetchList() {
-	const url = `http://localhost:8000/listTravel`
+	const url = `http://localhost:8000/listTravel/${TokenService.getUserId('userid')}`
 			fetch(url)
 			.then(response => {
 				if (!response.ok) {
@@ -20,50 +22,48 @@ export default class BucketList extends Component{
 				return response.json();
 			})
 			.then(data => {	
-			this.renderResults(data)
+			this.renderNew(data)
 		})
 			.catch(err => {
 				console.log(err);
 			});
-		}
-	
-	
-	renderResults(data) {
-		console.log("dsjfk")
-	const tripListData = data
-	console.log(tripListData)
-		const tripDataResults = tripListData.map((items, id) => {
-			console.log(items)
-		return(
 		
-	
-							 	<ul>
-							 		<li key={id}>Comments:{items.name}
-									</li>
-									<li key={id}>Name:{items.snippet}
-									</li>
-								</ul>
-			
-			
-									)})
-		console.log(tripDataResults)
-		return (
-			
-			<div>
-			{tripDataResults}
-		</div>
-		);
-	
-}
-	render() {
-	//	const fetchList = this.props.fetchList
-	//	const displayList = this.tripDataResults
-		return(
-			<div>
+		}
+	renderNew(data){
+		const oldData= this.state.data
+		if (data.length !== oldData.length){ 
+		console.log('inside the if')	
+			this.setState({
+			data:data
+		})}
+			else {
+				console.log('nothing here')
+			}
+		
+	}
 
-		{this.fetchList()}
-			</div>
+	
+	
+	
+	render() {
+		const newOne = this.state.data.map((items, id) => 
+			<ul>
+				<li key={id}>Comments:{items.name}
+				</li>
+				<li key={id}>Name:{items.snippet}
+				</li>
+										   	<li key={id}>Name:{items.id}
+				</li>
+			</ul>
+			)
+		return (
+			<div>
+			{this.fetchList()}
+			{newOne}
+					</div>
 		)
 	}
 }
+
 	
+

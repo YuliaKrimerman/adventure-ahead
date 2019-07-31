@@ -33,6 +33,7 @@ class App extends React.Component {
 			   <Route path='/' component={Nav} />
 			   <Route path='/' exact component={HomePage} />
 			   <PrivateRoute path='/search' component={MainPage} />
+			 	<PrivateRoute path='/bucketList' component={BucketList} />
 			   <PublicOnlyRoute path='/signup' component={SignUpForm} />
 			 
          

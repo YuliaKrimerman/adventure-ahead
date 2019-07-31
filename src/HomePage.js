@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginForm from './LoginForm';
-import TokenService from './token-service'
+import TokenService from './token-service';
+import BucketList from './BucketList';
 
 import MainPage from './MainPage';
 
@@ -15,10 +16,9 @@ class HomePage extends React.Component {
     renderLoggedInPath() {
         return (
             <section className='header-logged-in-profile'>
-          
 			<MainPage />
-		
-            </section>
+            <BucketList /> 
+			            </section>
         )
     }
 
@@ -26,7 +26,6 @@ class HomePage extends React.Component {
     renderLoginForm() {
         return (
             <section className='login'>
-     
                 <LoginForm />
             </section>
         )
