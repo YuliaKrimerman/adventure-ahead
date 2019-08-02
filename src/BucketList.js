@@ -168,4 +168,3 @@ export default class BucketList extends Component{
 }
 
 	
-

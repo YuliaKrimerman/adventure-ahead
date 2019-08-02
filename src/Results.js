@@ -15,7 +15,6 @@ class Results extends React.Component {
 			}
 			const newuserid = TokenService.getUserId('userid');
 			const currentToken = TokenService.getAuthToken();
-console.log(newuserid)
 		}
 	// handle the form submission
 		handleSubmit(e) {

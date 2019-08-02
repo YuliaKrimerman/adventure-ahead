@@ -2,6 +2,7 @@ import React from 'react';
 import LoginForm from './LoginForm';
 import TokenService from './token-service';
 import BucketList from './BucketList';
+import PackingList from './PackingList';
 
 import MainPage from './MainPage';
 
@@ -18,6 +19,7 @@ class HomePage extends React.Component {
             <section className='header-logged-in-profile'>
 			<MainPage />
             <BucketList /> 
+			<PackingList />
 			            </section>
         )
     }
