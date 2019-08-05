@@ -14,6 +14,83 @@ export default class PackingList extends Component{
 				
 			}
 		}
+	stateUpdate(e){
+		this.setState({
+			isChecked:true,
+			id:e.target.value
+		});
+			this.postUserData();
+	
+	}
+	
+	handlePost(e){
+	e.preventDefault();
+	this.stateUpdate(e);
+	
+
+	}
+	
+	
+
+
+	
+	postUserData(isChecked,id) {
+		let usersData = {
+				"checked": this.state.isChecked
+			}
+		let newId = this.state.id
+		let url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}/${newId}`
+		console.log(url)
+			fetch(url, {
+				
+					method: 'PATCH',
+					body: JSON.stringify(usersData),
+					headers: {
+					'Content-Type': 'application/json',
+						'Authorization': `bearer ${TokenService.getAuthToken()}`
+				}})
+
+				.then(res => {
+					if (!res.ok) {
+						// get the error message from the response,
+						return res.json().then(error => {
+							// then throw it
+							throw error
+						})
+					}
+				})
+	
+		
+	}
+	
+	
+	
+
+	deleteUserData(){
+		let id = this.state.id
+		console.log(id)
+			fetch(`http://localhost:8000/listTravel/${TokenService.getUserId('userid')}/${id}`, {
+					method: 'DELETE',
+					body: JSON.stringify(id),
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+
+				.then(res => {
+					if (!res.ok) {
+						// get the error message from the response,
+						return res.json().then(error => {
+							// then throw it
+							throw error
+						})
+					}
+				})
+
+		
+		
+		
+		}
 	
 	fetchPackList() {
 	const url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}`
@@ -47,22 +124,22 @@ export default class PackingList extends Component{
 	}
 
 	render() {
-		
 			const newTwo = this.state.data.map((items, id) => 
-			<div>					   
+			<div>				
+			<form className="userUpdate" onSubmit={e => this.handlePost(e)}>
 				<ul>						  
 					<li key={id}>Name:{items.list}
 					</li>
-					<form className="userUpdate" onSubmit={e => this.handlePost(e)}>
-					<input key={id} onClick={() => this.setState({isChecked:true})}type="checkbox"  /> 
-					</form>
+					<input value={items.id} onClick ={e => this.stateUpdate(e)} type="checkbox"   /> 
+						
 				</ul>
+			</form>
 			</div>
-											  )
+					  )
 		return (
 			<div>
 		{this.fetchPackList()}
-	{newTwo}
+		{newTwo}
 		</div>
 		)
 	}
