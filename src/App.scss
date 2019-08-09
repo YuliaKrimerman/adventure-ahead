@@ -1,0 +1,146 @@
+
+
+body {
+	background: url(http://www.bestfunforall.com/better/imgs/Hot%20Air%20Balloons%20Sunlight%20Simple%20Background%20wallpaper%20%201.jpg);
+	background-size:cover;
+font-family: 'Amatic SC', cursive;
+
+	
+}
+
+.App {
+
+}
+.Header {
+	background-color: black;
+	opacity:0.6;
+	border: 1cm solid black;
+	border-radius: 50%;
+	width: 40%;
+	
+}
+h1{
+	text-align: center;
+	color:white;
+	font-size: 1.5em;
+}
+
+.sign {
+
+	color: white;
+	margin-top:-120px;
+	
+	margin-left:60%;
+		
+}
+
+.hidden {
+	display: none;
+}
+
+
+@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+  box-shadow: inset 0 0 0 $width $color;
+  color: #ffe593;
+transition: color $duration $duration/3;
+  position: relative;
+  
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+	  
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0; height: 0;
+    
+    #{$vertical}: 0; 
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal == 'left', 'right', 'left');
+ 
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+  
+  &::after {
+    $v-side: if($vertical == 'top', 'bottom', 'top');
+    
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+  
+  &:hover {
+    color: $hover;
+    
+    &::before,
+    &::after {
+      border-color: $hover;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 100%;
+      height: 100%;
+    }
+    
+    &::before { transition-delay: 0s, 0s, $duration; }
+    
+    &::after { transition-delay: 0s, $duration, 0s; }
+  }
+}
+
+.draw-border {
+  @include btn-border-drawing(#F08080, #ffe593, 4px, bottom, right);
+}
+
+.draw-border-two {
+
+  @include btn-border-drawing(none, #ffe593, 4px, bottom, right);
+}
+
+
+//=== Button styling, semi-ignore
+.btn{
+display:block;
+	background-color: #F08080;
+	opacity: 0.85;
+	height: 5px;
+	width:55px;
+	text-align: center;
+  padding: 1em 1em 2em ;
+  letter-spacing: 0.07rem;
+	font-weight: 1000;
+	margin-top: 10px;
+	margin-bottom: 20px;
+  
+
+}
+
+
+.hidden { display:none; }
+
+
+h2 {
+	font-size: 20px;
+}
+
+.upButton{
+	
+	color:white;
+} 
+
+
+.btn2 {
+display:block;
+font-size: 10px;
+	opacity: 0.75;
+border:none;
+	width:40px;
+	text-align: center;
+  padding: 1em 1em;
+  letter-spacing: 0.05rem;
+	font-weight: 1000;
+  
+
+}

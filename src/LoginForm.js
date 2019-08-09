@@ -1,8 +1,9 @@
 import React from 'react'
-
+import './LoginForm.scss'
 import AuthApiService from './auth-api-service'
 import TokenService from './token-service'
 import ValidationError from './ValidationError'
+import { Route ,Link } from 'react-router-dom'
 
 
 class LoginForm extends React.Component {
@@ -14,6 +15,7 @@ class LoginForm extends React.Component {
         super(props)
         this.state = {
             email: '',
+			hidediv:false,
             password: '',
             user: '',
             error: null,
@@ -30,7 +32,7 @@ class LoginForm extends React.Component {
     // Handle user login and create auth token 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault();
-        this.setState({ error: null });
+        this.setState({ error: null , hidediv:true});
         const { email, password } = ev.target
         AuthApiService.postLogin({
             email: email.value,
@@ -41,7 +43,7 @@ class LoginForm extends React.Component {
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
                 TokenService.saveUserId(res.userid)
-                window.location = '/';
+                window.location = '/search';
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -113,10 +115,10 @@ class LoginForm extends React.Component {
     render() {
         const { error } = this.state;
         return (
-            <div className="login-form">
+            <div className="login-form" >
                 <form className="sign-in-main" onSubmit={this.handleSubmitJwtAuth}>
                     <fieldset className='login-fieldset'>
-                        <h1 className='sign-in-legend'>Sign In</h1>
+                        <h4 className='sign-in-legend'>Sign In</h4>
                         <label htmlFor='email-input' className='sign-in-email'>Email</label>
                         <input
                             type='text'
@@ -140,7 +142,7 @@ class LoginForm extends React.Component {
                             {error && <span className="login-error">{error}</span>}
                             <p>*Email/Password are case sensitive</p>
                         </div>
-                        <button className='sign-in-button'>Sign In</button>
+                        <button type="submit" className='btn draw-border'>Sign In</button>
                         <section className='demo-login-info'>
                             <h2>Demo login info:</h2>
                             <p>Email: testuser101@email.com</p>

@@ -1,6 +1,8 @@
 import React from 'react';
 import AuthApiService from './auth-api-service';
 import ValidationError from './ValidationError';
+import './SignUpForm.scss'
+import { Route ,Link } from 'react-router-dom'
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -166,7 +168,7 @@ class SignUpForm extends React.Component {
         const { error } = this.state
         return (
             <section className='signup-page'>
-                <h3>Sign up to get started rating your favorite wine!</h3>
+                <h3>Sign up to get the best of your next Trip!</h3>
                 <form className='sign-up-main' onSubmit={this.handleAddUser}>
                     <fieldset className='sign-up-fieldset'>
                         <label>First Name</label>
@@ -207,7 +209,7 @@ class SignUpForm extends React.Component {
                         <div className="error" role="alert">
                             {error && <span className="signup-error">{error}</span>}
                         </div>
-                        <button className='sign-up-button'>Create Account</button>
+                        <button type="submit" className='btn draw-border'>Sign Up</button>
                         <ul>
                             <li>*All fields are required</li>
                             <li>*Password must have 1 uppercase, one symbol, and at least 8 characters</li>

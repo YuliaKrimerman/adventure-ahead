@@ -7,7 +7,7 @@ import BucketList from './BucketList'
 import PackingList from './PackingList'
 import LoginForm from './LoginForm';
 import TokenService from './token-service'
-//import config from './config';
+import './App.scss';
 import PublicOnlyRoute from './PublicOnlyRoute';
 import PrivateRoute from './PrivateOnlyRoute';
 import HomePage from './HomePage';
@@ -21,25 +21,44 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			user:'',
-			error:null
-		
-		}
-		
-	}
+			error:null,
+		 hidediv: false
 
+		}
+	}
+	
+  handleToggleClick() {
+    this.setState({
+      hidediv: true
+    });
+  }
+	
+	
 	render() {
 		return ( 
-			<div className = 'App' >
-			   <Route path='/' component={Nav} />
-			   <Route path='/' exact component={HomePage} />
-			   <PrivateRoute path='/search' component={MainPage} />
-			 	<PrivateRoute path='/bucketList' component={BucketList} />
-			<PrivateRoute path='/packingList' component={PackingList} />
-			   <PublicOnlyRoute path='/signup' component={SignUpForm} />
+			<div className = 'App'>
+			<div className="Header"  hidden={this.state.hidediv} >
+			<h1>  Wanna be as ready as possible your next trip? <br></br> Sign in, explore local highlights in <br></br>the city you are visiting,add them to your Bucketlist and then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
+			</div>
+			<div className="sign" hidden={this.state.hidediv}>
+			<Link to='/login' className="btn draw-border" onClick={e =>this.handleToggleClick()} > Sign In </Link>
+			<h2> Don't have a user? Sign Up here </h2>
+			<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.handleToggleClick()}> Sign Up </Link>
+			</div>
+              
+			
+			   
+				     <Route path='/' exact component={HomePage} />
+			
+			   <PrivateRoute path='/search' exact component={MainPage} />
+			  <PrivateRoute path='/bucketList' exact component={BucketList} />
+			   <PrivateRoute path='/packingList' exact component={PackingList} />
+			   <PublicOnlyRoute path='/signup' exact component={SignUpForm} />
+			  <PublicOnlyRoute path='/login'  exact component={LoginForm} />
 			 
          
 			
-			/>
+	
 		</div>
 		);
 	}

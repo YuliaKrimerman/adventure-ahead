@@ -3,6 +3,8 @@ import LoginForm from './LoginForm';
 import TokenService from './token-service';
 import BucketList from './BucketList';
 import PackingList from './PackingList';
+import { Route ,Link } from 'react-router-dom';
+import Nav from './Nav'
 
 import MainPage from './MainPage';
 
@@ -12,14 +14,27 @@ class HomePage extends React.Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
     }
+		constructor(props) {
+		super(props);
+		this.state = {
+		 hidediv: false
+		}
+	}
+	
+  handleToggleClick() {
+    this.setState({
+      hidediv: true
+    });
+  }
+	
 
 // Display all reviews path once user is logged in 
     renderLoggedInPath() {
         return (
             <section className='header-logged-in-profile'>
+			 <Nav />
 			<MainPage />
-            <BucketList /> 
-			<PackingList />
+       
 			            </section>
         )
     }
@@ -27,8 +42,9 @@ class HomePage extends React.Component {
 // Display login form and welcome page when user is logged out
     renderLoginForm() {
         return (
+	
             <section className='login'>
-                <LoginForm />
+	
             </section>
         )
     }

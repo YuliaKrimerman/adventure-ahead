@@ -1,0 +1,12 @@
+.sign-in-main{
+	width: 50%;
+	border: none;
+	float: right
+}
+
+fieldset {
+	border: none;
+	display: inline-flex;
+	margin-top: -300px;
+	padding-bottom:-100px;
+}

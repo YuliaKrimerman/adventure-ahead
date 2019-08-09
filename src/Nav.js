@@ -6,9 +6,6 @@ export default class Nav extends Component {
   render() {
     return (
       <div className='Nav'>
-        <a href='/'>
-          Home
-        </a>
         <a href='/search'>
           Search
         </a>

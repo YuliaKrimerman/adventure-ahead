@@ -8,26 +8,24 @@ export default class PackingList extends Component{
 				data: [],
 				user_id:'',
 				id:'',
-				name:"",
-				snippet:"",
-				isChecked:false
+				isChecked:false,
+				newData:[],
+				
+			
 				
 			}
 		}
-	stateUpdate(e){
-		console.log(!this.state.isChecked)
-		this.setState({
-			isChecked: !this.state.isChecked,
-			id:e.target.value
-		});
-		console.log(this.state)
-		this.postUserData(e.target.value,!this.state.isChecked);
-	
-	}
-	
+
+
 	handlePost(e){
-	e.preventDefault();
-	this.stateUpdate(e);
+		e.preventDefault();
+		this.setState({
+			isChecked:true,
+			hidediv:true
+		})
+		this.postUserData(e.target.value,true);
+		this.fetchNewPackList();
+		
 	}
 
 
@@ -36,7 +34,7 @@ export default class PackingList extends Component{
 	
 	postUserData(newId, isChecked) {
 		let usersData = {
-				"checked":!this.state.isChecked
+				"checked":true
 			}
 		
 		let url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}/${newId}`
@@ -58,14 +56,50 @@ export default class PackingList extends Component{
 						})
 					}
 					
+			else {
 				
-this.fetchPackList()
+				console.log('dasdfasd')
+			}
 				})
 	
 	}
 	
 	
+fetchNewPackList() {
+	const url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}`
+			fetch(url)
+			.then(response => {
+				if (!response.ok) {
+					throw new Error(response.statusText);
+				}
+				return response.json();
+			})
+			.then(data => {	
+			this.renderUpdated(data)
+		})
+			.catch(err => {
+				console.log(err);
+			});
+	
+		}
+	
+renderUpdated(data){
+	let newOnes =[];
+		for (let i=0; i< data.length; i++) {
+			if (data[i].checked === true) {
+				newOnes.push(data[i])
+			
+			  };
+				this.setState ({
+				  newData:newOnes
+			})
+				console.log(newOnes)
 
+	
+		}
+}
+	
+	
 	
 	fetchPackList() {
 	const url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}`
@@ -88,38 +122,47 @@ this.fetchPackList()
 		}
 	renderNew(data){
 		const oldData= this.state.data
+		console.log(oldData, data)
 		if (data.length !== oldData.length){ 
 		console.log('inside the if')	
 			this.setState({
 			data:data
-		})}
+		});
+		}
 			else {
 				console.log('nothing here')
 			}
 				
-
 	}
 
 	render() {
+		const selectedData = this.state.newData
+		console.log(this.state.newData)
 			const newTwo = this.state.data.map((items, id) => 
 			<div>				
-			<form className="userUpdate" onSubmit={e => this.handlePost(e)}>
+			<form className="userUpdate">
 				<ul>						  
-					<li key={id}>Name:{items.list}
+					<li key={id} >Name:{items.list} 
 					</li>
-					<input value={items.id} onClick ={e => this.stateUpdate(e)} type="checkbox" checked={this.state.isChecked}  /> 
+						<button value={items.id} type="submit" onClick ={e =>this.handlePost(e)}>Add to Packed List  </button>
 				</ul>
 			</form>
 			</div>
 				)
 		return (
-			<div>
-				<form>
-			<button type="submit">Save Changes </button>
-			</form>
+		<div>
 		{this.fetchPackList()}
+			{this.selectedData}
 		{newTwo}
+		
+				<div className="comments">
+				<ul>
+  					<h7>Comments:</h7> {selectedData.map((d, idx) =>
+         				 (<li key={idx}>{d.list}</li>))}
+       				
+				</ul>
 		</div>
+</div>
 		)
 	}
 }
