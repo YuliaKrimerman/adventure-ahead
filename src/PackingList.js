@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TokenService from './token-service';
+import './PackingList.css';
 
 export default class PackingList extends Component{
 			constructor(props) {
@@ -139,7 +140,7 @@ renderUpdated(data){
 		const selectedData = this.state.newData
 		console.log(this.state.newData)
 			const newTwo = this.state.data.map((items, id) => 
-			<div>				
+ <div>	
 			<form className="userUpdate">
 				<ul>						  
 					<li key={id} >Name:{items.list} 
@@ -147,22 +148,32 @@ renderUpdated(data){
 						<button value={items.id} type="submit" onClick ={e =>this.handlePost(e)}>Add to Packed List  </button>
 				</ul>
 			</form>
+
 			</div>
 				)
 		return (
 		<div>
 		{this.fetchPackList()}
-			{this.selectedData}
+		{this.selectedData}
+								   <div className="text-box">
+											   	 <div className="scrollbar"  id="style-4">
+			
 		{newTwo}
-		
-				<div className="comments">
+			
+			</div>
+			</div>
+			<div className="text-box2">
+											   	 <div className="scrollbar"  id="style-4">
 				<ul>
   					<h7>Comments:</h7> {selectedData.map((d, idx) =>
-         				 (<li key={idx}>{d.list}</li>))}
+         		<li key={idx}>{d.list}</li>)} 
        				
 				</ul>
+			</div>
+			</div>
 		</div>
-</div>
+	
+
 		)
 	}
 }

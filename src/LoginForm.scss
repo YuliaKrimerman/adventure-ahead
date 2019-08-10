@@ -11,21 +11,21 @@ body {
 .sign-in-main{
 	width: 50%;
 	border: none;
-	float: right
+	float: right;
+	height:20%;
 }
 
 fieldset {
 	border: none;
-	display: inline-flex;
-	margin-top: -30px;
-	padding-bottom:-100px;
+	display: inline-grid;
+
 }
 
 h4{
 	color: black;
 	display: flex;
 float: right;
-	margin-top: 20%;
+	margin-top: 20px;
 	margin-right: 35%;
 	letter-spacing: 0.05rem;
 	

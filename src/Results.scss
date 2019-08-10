@@ -1,50 +1,52 @@
 
 
-body {
-	background:rgb(26, 37, 63);
-	background-size:cover;
-font-family: 'Amatic SC', cursive;
-
-	
-}
-.Header {
-	//background-color: rgb(242, 185, 174);
-	opacity:0.8;
-	border-bottom: 0.2cm solid rgb(242, 185, 174);
-	border-top: 0.2cm solid rgb(242, 185, 174);
-//	border-radius: 50%;
-	width: 40%;
-	height: 20%;
-	display: -webkit-inline-box;
-	float: unset;
-	margin-top: 40px;
-	margin-left: 20px;
-
-	
-}
-.hero {
-	width:350px;
-	margin-bottom: 60px;
-	height: 300px;
-	display: flex;
+.scrollbar3
+{
+	margin-left: 22px;
 	float: left;
+	height: 300px;
+	//max-width: 90%;
+	overflow-y: scroll;
+	margin-bottom: 25px;
 }
-h1{
+
+.text-box3 {
+	display: block;
+	margin-top: 10px;
+	align-content: flex-start;
+	margin-right: 5%;
+	
+}
+
+
+
+
+#style-4::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #FDE6C6;
+}
+
+#style-4::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+h5{
+	font-size:20px;
+	color: rgb(242, 185, 174)
+}
+
+li {
+	list-style: none;
 	text-align: center;
-	color:rgb(242, 185, 174);
-	font-size: 20px;
-}
-
-.sign {
-	color: rgb(26, 37, 63);
-
-    display: flow-root;
-    float: unset;
-    padding-left: 15%;
-}
-
-.hidden {
-	display: none;
 }
 
 
@@ -111,7 +113,7 @@ transition: color $duration $duration/3;
 
 
 //=== Button styling, semi-ignore
-.btn{
+#btn{
 display:block;
 	color:rgb(242, 185, 174);
 	background-color: rgb(26, 37, 63);
@@ -126,34 +128,5 @@ display:block;
 	margin-top: 10px;
 	margin-bottom: 20px;
   
-
-}
-
-
-.hidden { display:none; }
-
-
-h2 {
-	font-size: 10px;
-	color:rgb(242, 185, 174);
-}
-
-.upButton{
-	
-	color:rgb(242, 185, 174);
-} 
-
-
-.btn2 {
-display:block;
-font-size: 10px;
-	opacity: 0.75;
-border:none;
-	width:40px;
-	text-align: center;
-  padding: 1em 1em;
-  letter-spacing: 0.05rem;
-	font-weight: 1000;
-  color: rgb(242, 185, 174);
 
 }

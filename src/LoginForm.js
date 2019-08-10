@@ -115,6 +115,8 @@ class LoginForm extends React.Component {
     render() {
         const { error } = this.state;
         return (
+			<div>
+			
             <div className="login-form" >
                 <form className="sign-in-main" onSubmit={this.handleSubmitJwtAuth}>
                     <fieldset className='login-fieldset'>
@@ -151,6 +153,7 @@ class LoginForm extends React.Component {
                     </fieldset>
                 </form>
             </div>
+</div>
         )
     }
 

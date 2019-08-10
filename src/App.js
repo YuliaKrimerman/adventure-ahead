@@ -31,20 +31,25 @@ class App extends React.Component {
     this.setState({
       hidediv: true
     });
+	   
   }
 	
 	
 	render() {
 		return ( 
 			<div className = 'App'>
-			<div className="Header"  hidden={this.state.hidediv} >
-			<h1>  Wanna be as ready as possible your next trip? <br></br> Sign in, explore local highlights in <br></br>the city you are visiting,add them to your Bucketlist and then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
+			<img className="hero" src={`https://i.ibb.co/jRRMQsN/Untitledff.png`} alt="Logo" />
+			<div  hidden={this.state.hidediv}>
+				<div className="Header" >
+			<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights in <br></br>the city you are visiting,add them to your Bucketlist and then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
 			</div>
-			<div className="sign" hidden={this.state.hidediv}>
+          
+			<div className="sign" >
 			<Link to='/login' className="btn draw-border" onClick={e =>this.handleToggleClick()} > Sign In </Link>
 			<h2> Don't have a user? Sign Up here </h2>
 			<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.handleToggleClick()}> Sign Up </Link>
 			</div>
+</div>
               
 			
 			   

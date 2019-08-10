@@ -5,6 +5,7 @@ import BucketList from './BucketList';
 import PackingList from './PackingList';
 import { Route ,Link } from 'react-router-dom';
 import Nav from './Nav'
+import './HomePage.css';
 
 import MainPage from './MainPage';
 
@@ -43,13 +44,14 @@ class HomePage extends React.Component {
     renderLoginForm() {
         return (
 	
-            <section className='login'>
-	
-            </section>
-        )
+     
+	<div></div>
+      )
     }
     render() {
         return (
+		
+		
 			<div>
             <section className='home-screen'>
                 {TokenService.hasAuthToken()
@@ -57,6 +59,7 @@ class HomePage extends React.Component {
                     : this.renderLoginForm()}
             </section>
 </div>
+
         )
     }
 }

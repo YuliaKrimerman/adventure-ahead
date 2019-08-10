@@ -1,6 +1,7 @@
 import React from 'react';
 import TokenService from './token-service';
-import config from './config'
+import config from './config';
+import './Results.scss'
 
 
 
@@ -72,9 +73,9 @@ class Results extends React.Component {
         return (
 			<form onSubmit = {e => this.handleSubmit(e)}>
           		<li key={index}>
-					<h2>{items.name} </h2> 
-					<h2>{items.snippet} </h2>
-					<button type="submit" onClick={() => this.setState({id:items.id,name:items.name,snippet:items.snippet})}> Add to bucket list </button>
+					<h5>{items.name} </h5> 
+					<h5>{items.snippet} </h5>
+					<button type="submit" className="btn draw-border" id="btn" onClick={() => this.setState({id:items.id,name:items.name,snippet:items.snippet})}> Add to bucket list </button>
 
 		  		</li>
 			</form>
@@ -83,8 +84,12 @@ class Results extends React.Component {
 			
 		return (
 				<div>
+			<div className="text-box3">
+											   	 <div className="scrollbar3"  id="style-4">
 					{tripDataResults}
 				</div>
+			</div>
+			</div>
 			);
 		}
 	}
