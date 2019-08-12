@@ -1,5 +1,6 @@
 import React from 'react';
 import Results from './Results'
+import Nav from './Nav'
 
 const mapsAPIKey = 'AIzaSyC6FqHjgnVXKVBLaFq-o28f77NjQXeBeJI';
 const geocodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?';
@@ -82,28 +83,29 @@ class MainPage extends React.Component {
 
 	render() {
 		return ( 
-			<div className = 'App' >
-				<form onSubmit = {e => this.handleSubmit(e)} >
-					<div className = "search-section top" >
-						<input required className = "search__input"
-						   	placeholder = "Where is your Trip to?"
-				           	type = "text"
-							onChange = {e => this.searchTermUpdate(e.target.value)}
-						/> 
-					</div>   
-					<div className = "buttons-coll" >
-						<button type = "submit"
-								className = "custom-btn btn-4" > 
-							<span> 
-								Search
-							</span>
-						</button > 
-					</div> 
-				</form> 
-			<Results 
-				itemsDisplay={this.state.tripData}
-			/>
-		</div>
+			<div>
+				<Nav />
+					<div className = 'Appy' >
+						<form onSubmit = {e => this.handleSubmit(e)} >
+							<div className = "search-section top" >
+								<input required className = "search__input"
+						   				placeholder = "Where is your Trip to?"
+				           				type = "text"
+										onChange = {e => this.searchTermUpdate(e.target.value)}/> 
+							</div>   
+							<div className = "buttons-coll" >
+								<button type = "submit" className = "btn draw-border" > 
+									<span> 
+										Search
+									</span>
+								</button > 
+							</div> 
+						</form> 
+				<Results 
+					itemsDisplay={this.state.tripData}
+				/>
+				</div>
+			</div>
 		);
 	}
 }

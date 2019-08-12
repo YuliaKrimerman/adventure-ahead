@@ -4,7 +4,7 @@ import AuthApiService from './auth-api-service'
 import TokenService from './token-service'
 import ValidationError from './ValidationError'
 import { Route ,Link } from 'react-router-dom'
-
+import Nav from './Nav'
 
 class LoginForm extends React.Component {
     static defaultProps = {

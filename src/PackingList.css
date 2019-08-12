@@ -6,7 +6,7 @@
 	margin-left: 22px;
 	float: left;
 	height: 300px;
-	max-width: 90%;
+	max-width: 100%;
 	background: rgb(242, 185, 174);
 	overflow-y: scroll;
 	margin-bottom: 25px;
@@ -15,7 +15,7 @@
 .text-box {
 	display: block;
 	margin-top: 10px;
-	width: 35%;
+	width: 30%;
 	align-content: flex-start;
 	margin-right: 5%;
 }

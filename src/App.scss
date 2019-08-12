@@ -13,7 +13,7 @@ font-family: 'Amatic SC', cursive;
 	border-bottom: 0.2cm solid rgb(242, 185, 174);
 	border-top: 0.2cm solid rgb(242, 185, 174);
 //	border-radius: 50%;
-	width: 40%;
+	width: 45%;
 	height: 20%;
 	display: -webkit-inline-box;
 	float: unset;
@@ -23,16 +23,16 @@ font-family: 'Amatic SC', cursive;
 	
 }
 .hero {
-	width:350px;
+	width:500px;
 	margin-bottom: 60px;
-	height: 300px;
+	height: 400px;
 	display: flex;
 	float: left;
 }
 h1{
 	text-align: center;
 	color:rgb(242, 185, 174);
-	font-size: 20px;
+	font-size: 35px;
 }
 
 .sign {
@@ -100,35 +100,50 @@ transition: color $duration $duration/3;
 }
 
 .draw-border {
-  @include btn-border-drawing( rgb(242, 185, 174), rgb(242, 195, 174), 4px, bottom, right);
+  @include btn-border-drawing( rgb(242, 185, 174),  rgb(26, 37, 63), 4px, bottom, right);
 }
 
 .draw-border-two {
 
-  @include btn-border-drawing(none, rgb(26, 37, 63), 4px, bottom, right);
+  @include btn-border-drawing(none,rgb(242, 185, 174), 4px, bottom, right);
 }
 
 
 
 //=== Button styling, semi-ignore
 .btn{
-display:block;
-	color:rgb(242, 185, 174);
-	background-color: rgb(26, 37, 63);
-	opacity: 0.85;
-	height: 5px;
-	font-size: 10px;
-	width:35px;
-	text-align: center;
-  padding: 1em 1em 2em ;
-  letter-spacing: 0.07rem;
-	font-weight: 1000;
+display:block !important;
+	color:rgb(242, 185, 174)!important;
+	background-color: rgb(26, 37, 63)!important;
+	opacity: 0.85!important;
+	height: 50px!important;
+	font-size: 25px!important;
+	width:100px!important;
+	text-align: center!important;
+ //padding: 1em 1em  !important;
+  letter-spacing: 0.07rem!important;
+	font-weight: 1000!important;
 	margin-top: 10px;
 	margin-bottom: 20px;
-  
+	font:400 75px 'Amatic SC', cursive;
+	box-sizing: border-box;
+border: 0 solid transparent;
 
 }
 
+.btn2 {
+display:block;
+font-size: 10px;
+	opacity: 0.75;
+border:none;
+	width: 35px;
+	text-align: center;
+  padding: 1em 1em;
+  letter-spacing: 0.05rem;
+	font-weight: 1000;
+  color: rgb(242, 185, 174);
+
+}
 
 .hidden { display:none; }
 
@@ -144,16 +159,3 @@ h2 {
 } 
 
 
-.btn2 {
-display:block;
-font-size: 10px;
-	opacity: 0.75;
-border:none;
-	width:40px;
-	text-align: center;
-  padding: 1em 1em;
-  letter-spacing: 0.05rem;
-	font-weight: 1000;
-  color: rgb(242, 185, 174);
-
-}
