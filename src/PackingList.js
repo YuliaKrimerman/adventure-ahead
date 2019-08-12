@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TokenService from './token-service';
 import './PackingList.css';
+import Nav from './Nav'
 
 export default class PackingList extends Component{
 			constructor(props) {
@@ -11,9 +12,6 @@ export default class PackingList extends Component{
 				id:'',
 				isChecked:false,
 				newData:[],
-				
-			
-				
 			}
 		}
 
@@ -29,9 +27,6 @@ export default class PackingList extends Component{
 		
 	}
 
-
-	
-	
 	
 	postUserData(newId, isChecked) {
 		let usersData = {
@@ -139,41 +134,37 @@ renderUpdated(data){
 	render() {
 		const selectedData = this.state.newData
 		console.log(this.state.newData)
-			const newTwo = this.state.data.map((items, id) => 
- <div>	
-			<form className="userUpdate">
-				<ul>						  
-					<li key={id} >Name:{items.list} 
-					</li>
+		const newTwo = this.state.data.map((items, id) => 
+ 			<div>	
+				<form className="userUpdate">
+					<ul>						  
+						<li key={id} >Name:{items.list} 
+						</li>
 						<button value={items.id} type="submit" onClick ={e =>this.handlePost(e)}>Add to Packed List  </button>
-				</ul>
-			</form>
-
+					</ul>
+				</form>
 			</div>
-				)
+				)	
 		return (
-		<div>
-		{this.fetchPackList()}
-		{this.selectedData}
-								   <div className="text-box">
-											   	 <div className="scrollbar"  id="style-4">
-			
-		{newTwo}
-			
-			</div>
-			</div>
-			<div className="text-box2">
-											   	 <div className="scrollbar"  id="style-4">
-				<ul>
-  					<h7>Comments:</h7> {selectedData.map((d, idx) =>
-         		<li key={idx}>{d.list}</li>)} 
+			<div>
+				<Nav />
+				{this.fetchPackList()}
+				{this.selectedData}
+				<div className="text-box">
+					<div className="scrollbar"  id="style-4">
+						{newTwo}
+					</div>
+				</div>
+				<div className="text-box2">
+				<div className="scrollbar"  id="style-4">
+					<ul>
+  						<h7>Comments:</h7> {selectedData.map((d, idx) =>
+         					<li key={idx}>{d.list}</li>)} 
        				
-				</ul>
-			</div>
-			</div>
+					</ul>
+				</div>
+				</div>
 		</div>
-	
-
 		)
 	}
 }

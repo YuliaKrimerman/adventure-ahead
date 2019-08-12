@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import TokenService from './token-service';
+import Nav from './Nav';
+
 
 export default class BucketList extends Component{
 			constructor(props) {
@@ -142,7 +144,9 @@ export default class BucketList extends Component{
 			</div>
 		)
 		return (
+			
 			<div>
+			<Nav />
 				<form className="userInput" onSubmit={e => this.handlePost(e)}>
 					<div className = "container">
 						<input type = "text" required

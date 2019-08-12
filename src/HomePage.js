@@ -33,33 +33,26 @@ class HomePage extends React.Component {
     renderLoggedInPath() {
         return (
             <section className='header-logged-in-profile'>
-			 <Nav />
-			<MainPage />
-       
-			            </section>
+				<MainPage />
+			 </section>
         )
     }
 
 // Display login form and welcome page when user is logged out
     renderLoginForm() {
         return (
-	
-     
-	<div></div>
+     	<div></div>
       )
     }
     render() {
         return (
-		
-		
 			<div>
-            <section className='home-screen'>
-                {TokenService.hasAuthToken()
-                    ? this.renderLoggedInPath()
-                    : this.renderLoginForm()}
-            </section>
-</div>
-
+            	<section className='home-screen'>
+                	{TokenService.hasAuthToken()
+                    	? this.renderLoggedInPath()
+						: this.renderLoginForm()}
+            	</section>
+			</div>
         )
     }
 }

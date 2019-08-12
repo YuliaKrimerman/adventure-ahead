@@ -14,9 +14,7 @@ import HomePage from './HomePage';
 
 
 
-
 class App extends React.Component {
-	
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -31,40 +29,30 @@ class App extends React.Component {
     this.setState({
       hidediv: true
     });
-	   
   }
 	
 	
 	render() {
 		return ( 
 			<div className = 'App'>
-			<img className="hero" src={`https://i.ibb.co/jRRMQsN/Untitledff.png`} alt="Logo" />
-			<div  hidden={this.state.hidediv}>
-				<div className="Header" >
-			<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights in <br></br>the city you are visiting,add them to your Bucketlist and then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
+				<img className="hero" src={`https://i.ibb.co/jRRMQsN/Untitledff.png`} alt="Logo" />
+				<div  hidden={this.state.hidediv}>
+					<div className="Header" >
+						<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights in <br></br>the city you are visiting,add them to your Bucketlist and then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
+					</div>
+					<div className="sign" >
+						<Link to='/login' className="btn draw-border" onClick={e =>this.handleToggleClick()} > Sign In </Link>
+							<h2> Don't have a user? Sign Up here </h2>
+						<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.handleToggleClick()}> Sign Up </Link>
+					</div>
+				</div>  
+				<Route path='/' exact component={HomePage} />
+				<PrivateRoute path='/search' exact component={MainPage} />
+				<PrivateRoute path='/bucketList' exact component={BucketList} />
+				<PrivateRoute path='/packingList' exact component={PackingList} />
+			 	<PublicOnlyRoute path='/signup' exact component={SignUpForm} />
+			 	<PublicOnlyRoute path='/login'  exact component={LoginForm} />
 			</div>
-          
-			<div className="sign" >
-			<Link to='/login' className="btn draw-border" onClick={e =>this.handleToggleClick()} > Sign In </Link>
-			<h2> Don't have a user? Sign Up here </h2>
-			<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.handleToggleClick()}> Sign Up </Link>
-			</div>
-</div>
-              
-			
-			   
-				     <Route path='/' exact component={HomePage} />
-			
-			   <PrivateRoute path='/search' exact component={MainPage} />
-			  <PrivateRoute path='/bucketList' exact component={BucketList} />
-			   <PrivateRoute path='/packingList' exact component={PackingList} />
-			   <PublicOnlyRoute path='/signup' exact component={SignUpForm} />
-			  <PublicOnlyRoute path='/login'  exact component={LoginForm} />
-			 
-         
-			
-	
-		</div>
 		);
 	}
 }

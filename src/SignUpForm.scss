@@ -3,30 +3,31 @@
 
 body {
 	font-family: 'Amatic SC', cursive;
-
+color: white;
 }
 
 
 
 .signup-page, sign-up-main{
-	width: 50%;
+	width: 60%;
 	border: none;
-	float:right;
+
+	display: inline-block;
 }
 
 .sign-up-fieldset {
 	border: none;
-	display: inline-flex;
-margin-top: -54%;
-	margin-left: 10%
+	//display: inline-flex;
+
+	
 }
 
 h3 {
-	color: black;
+	color: rgb(242, 185, 174);
 	display: flex;
-float: right;
-	margin-top: -60%;
-	margin-right: 35%;
+
+
+
 	letter-spacing: 0.05rem;
 	
 }
