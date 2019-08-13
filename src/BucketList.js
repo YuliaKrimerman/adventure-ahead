@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TokenService from './token-service';
 import Nav from './Nav';
+import './BucketList.scss'
 
 
 export default class BucketList extends Component{
@@ -131,14 +132,15 @@ export default class BucketList extends Component{
 	
 	render() {
 		const newOne = this.state.data.map((items, id) => 
-			<div>					   
+			<div>	
+			
 				<ul>						  
-					<li key={id}>Name:{items.name}
+					<li key={id}><h7>{items.name} </h7>
 					</li>
-					<li key={id}>Snippet:{items.snippet}
+					<li key={id}><h8>{items.snippet}</h8>
 					</li>
 				 	<form className="deleteFromList" onSubmit={e => this.handleSubmit(e)}>
-					<button type="submit"  onClick={() => this.setState({id:items.id})} className="deleteItemButton">DELETE</button>	
+					<button className="btn3 draw-border" type="submit"  onClick={() => this.setState({id:items.id})} className="deleteItemButton">DELETE</button>	
 					</form>
 				</ul>
 			</div>
@@ -147,25 +149,31 @@ export default class BucketList extends Component{
 			
 			<div>
 			<Nav />
+			<fieldset>
+				<h9>Your Bucketlist </h9>
+			{newOne}
+			
 				<form className="userInput" onSubmit={e => this.handlePost(e)}>
 					<div className = "container">
+						<h6> Add a place of your own </h6>
 						<input type = "text" required
 							onChange = {e => this.searchTermUpdateName(e.target.value)}
 							placeholder = "Name" >
 						</input> 
 						<input type = "text" required
 							onChange = {e => this.searchTermUpdateSnippet(e.target.value)}
-							placeholder = "Snippet" >
+							placeholder = "Description" >
 						</input> 
 						<div className = "buttons-coll" >
 							<button type = "submit"
-							className ="custom-btn btn-4"> <span> Add </span>
+							className ="btn3 draw-border"> <span> Add </span>
 							</button> 
 						</div> 
 					</div> 
 				</form>
 			{this.fetchList()}
-			{newOne}
+			
+	</fieldset>
 					</div>
 		)
 	}

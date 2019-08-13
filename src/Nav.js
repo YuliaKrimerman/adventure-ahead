@@ -4,6 +4,10 @@ import './Nav.css';
 
 
 export default class Nav extends Component {
+	
+	constructor(props) {
+		super(props);
+	}
   render() {
     return (
       <div className='Nav'>
@@ -13,7 +17,7 @@ export default class Nav extends Component {
         <a href='/bucketlist'>
           Bucketlist 
         </a>
-		 <a href='/packinglist'>
+		 <a href='/packinglist' render={() => {this.props.fetchNewPackList()}}>
           Packing List
         </a>
       </div>

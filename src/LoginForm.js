@@ -3,7 +3,7 @@ import './LoginForm.scss'
 import AuthApiService from './auth-api-service'
 import TokenService from './token-service'
 import ValidationError from './ValidationError'
-import { Route ,Link } from 'react-router-dom'
+import { Route ,Link ,Redirect } from 'react-router-dom'
 import Nav from './Nav'
 
 class LoginForm extends React.Component {
@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+			
             email: '',
 			hidediv:false,
             password: '',
@@ -113,6 +114,9 @@ class LoginForm extends React.Component {
     }
 
     render() {
+		
+		
+  	
         const { error } = this.state;
         return (
 			<div>
@@ -120,7 +124,7 @@ class LoginForm extends React.Component {
             <div className="login-form" >
                 <form className="sign-in-main" onSubmit={this.handleSubmitJwtAuth}>
                     <fieldset className='login-fieldset'>
-                        <h4 className='sign-in-legend'>Sign In</h4>
+                        <h4 className='sign-in-legend'>Account Log In</h4>
                         <label htmlFor='email-input' className='sign-in-email'>Email</label>
                         <input
                             type='text'
@@ -144,7 +148,7 @@ class LoginForm extends React.Component {
                             {error && <span className="login-error">{error}</span>}
                             <p>*Email/Password are case sensitive</p>
                         </div>
-                        <button type="submit" className='btn draw-border'>Sign In</button>
+                        <button type="submit" className='btn3 draw-border'>Sign In</button>
                         <section className='demo-login-info'>
                             <h2>Demo login info:</h2>
                             <p>Email: testuser101@email.com</p>

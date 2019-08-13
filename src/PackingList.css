@@ -15,7 +15,7 @@
 .text-box {
 	display: block;
 	margin-top: 10px;
-	width: 30%;
+	width: 45%;
 	align-content: flex-start;
 	margin-right: 5%;
 }
@@ -24,10 +24,10 @@
 .text-box2 {
 	display: block;
 
-	width: 30%;
+	width: 45%;
 	align-content: flex-start;
 	float: right;
-	margin-right: 35%;
+	
 
 }
 
@@ -47,4 +47,24 @@
 {
 	background-color: #000000;
 	border: 2px solid #555555;
+}
+
+li.scrollbar{
+	list-style: decimal
+}
+
+.btn5 {
+display:list-item;
+font-size: 10px;
+	opacity: 0.75;
+border:none;
+	width: 155px;
+	text-align: center;
+  padding:15px;
+  letter-spacing: 0.05rem;
+	font-weight: 100;
+left: 30%;
+	margin:20px;
+  color: rgb(242, 185, 174);
+
 }

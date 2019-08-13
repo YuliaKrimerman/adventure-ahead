@@ -2,31 +2,94 @@
 
 
 body {
-	font-family: 'Amatic SC', cursive;
-
+font-family: 'Ubuntu', sans-serif;
 }
 
 
 
 .sign-in-main{
-	width: 50%;
-	border: none;
-	float: right;
+
+	
+	font-family: 'Ubuntu', sans-serif;
 	height:20%;
+	display: block;
+
 }
 
 fieldset {
 	border: none;
-	display: inline-grid;
-
+	margin-top: 30px;
+	font-size: 20px;
+	display:flex;
+	background-color: rgba(242, 185, 174,0.85);
+	
+text-align: center;
 }
 
 h4{
-	color: black;
-	display: flex;
-float: right;
+	font-family: 'Ubuntu', sans-serif;
+	 color:rgb(26, 37, 63);
+font-size: 30px;
+	font-weight: 200;
+text-align: center;
 	margin-top: 20px;
-	margin-right: 35%;
+	
 	letter-spacing: 0.05rem;
+	
+}
+
+input {
+		width: 30%;
+	padding: 12px 24px;
+	transition: transform 250ms ease-in-out;
+	letter-spacing: 4px;
+	line-height: 18px;
+	border: none;
+	border-bottom: 1px solid black;
+	color: #575756;
+	background-color: lightgray;
+	font-size: 10px;
+	text-align: center;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.btn3{
+display:block !important;
+	color:rgb(26, 37, 63)!important;
+background-color: rgb(242, 185, 174);
+	
+	height: 50px!important;
+	font-size: 25px!important;
+	width:120px!important;
+
+
+  letter-spacing: 0.07rem!important;
+	font-weight: 100!important;
+	display:block;
+font-size: 10px;
+	opacity: 0.75;
+border:2px solid rgb(26, 37, 63);
+	width: 45px;
+	text-align: center;
+ 
+  letter-spacing: 0.05rem;
+	font-weight: 100;
+
+
+  color: rgb(242, 185, 174);
+margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+font-family: 'Ubuntu', sans-serif;
+	box-sizing: border-box;
+border: 1 solid transparent;
+
+}
+
+label{
+	padding:15px;
 	
 }
