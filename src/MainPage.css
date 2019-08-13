@@ -1,16 +1,22 @@
 
 
 
+body {
+font-family: 'Ubuntu', sans-serif;
+}
 
 
-.signup-page, sign-up-main{
+
+.sign-in-main{
+
+	
 	font-family: 'Ubuntu', sans-serif;
-
+	height:20%;
 	display: block;
 
 }
 
-.sign-up-fieldset {
+fieldset {
 	border: none;
 	margin-top: 30px;
 	font-size: 20px;
@@ -20,7 +26,7 @@
 text-align: center;
 }
 
-h3 {
+h4{
 	font-family: 'Ubuntu', sans-serif;
 	 color:rgb(26, 37, 63);
 font-size: 30px;
@@ -31,23 +37,6 @@ text-align: center;
 	letter-spacing: 0.05rem;
 	
 }
-
-ufl{
-	color: white;
-	list-style: none;
-	margin-left: -12%;
-}
-
-
-
-
-
-body {
-font-family: 'Ubuntu', sans-serif;
-}
-
-
-
 
 input {
 		width: 30%;
@@ -61,7 +50,7 @@ input {
 	background-color: lightgray;
 	font-size: 10px;
 	text-align: center;
-
+margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -91,8 +80,7 @@ border:2px solid rgb(26, 37, 63);
 
 
   color: rgb(242, 185, 174);
-
-
+margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 font-family: 'Ubuntu', sans-serif;

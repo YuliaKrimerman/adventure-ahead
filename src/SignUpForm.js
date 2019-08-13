@@ -168,9 +168,11 @@ class SignUpForm extends React.Component {
         const { error } = this.state
         return (
             <section className='signup-page'>
-                <h3>Sign up to get the best of your next Trip!</h3>
+              
                 <form className='sign-up-main' onSubmit={this.handleAddUser}>
+			
                     <fieldset className='sign-up-fieldset'>
+			  <h3>Sign up to get the best of your next Trip!</h3>
                         <label>First Name</label>
                         <input
                             type='text'
@@ -209,7 +211,7 @@ class SignUpForm extends React.Component {
                         <div className="error" role="alert">
                             {error && <span className="signup-error">{error}</span>}
                         </div>
-                        <button type="submit" className='btn draw-border'>Sign Up</button>
+                        <button type="submit" className='btn3 draw-border'>Sign Up</button>
                         <ul>
                             <li>*All fields are required</li>
                             <li>*Password must have 1 uppercase, one symbol, and at least 8 characters</li>

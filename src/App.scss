@@ -2,45 +2,50 @@
 
 body {
 	background:rgb(26, 37, 63);
-	background-size:cover;
-font-family: 'Amatic SC', cursive;
+font-family: 'Ubuntu', sans-serif;
 
-	
-}
-.Header {
-	//background-color: rgb(242, 185, 174);
-	opacity:0.8;
-	border-bottom: 0.2cm solid rgb(242, 185, 174);
-	border-top: 0.2cm solid rgb(242, 185, 174);
-//	border-radius: 50%;
-	width: 45%;
-	height: 20%;
-	display: -webkit-inline-box;
-	float: unset;
-	margin-top: 40px;
-	margin-left: 20px;
+
 
 	
 }
 .hero {
-	width:500px;
-	margin-bottom: 60px;
-	height: 400px;
-	display: flex;
-	float: left;
+	background:url(https://i.ibb.co/FY6w4Jm/2395318.jpg);
+	background-size: cover;
+	opacity:0.87;
+
+
+	
 }
-h1{
+.logo {
+width:10%;
 	text-align: center;
-	color:rgb(242, 185, 174);
-	font-size: 35px;
+	overflow:visible;
+}
+h5{
+	font-size: 50px;
+		text-align: center;
+	color:rgb(26, 37, 63);
+	letter-spacing: 0.2em;
+	font-weight: 100;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+
+h1{ 
+	text-align: center;
+	color:rgb(26, 37, 63);
+	font-size: 15px;
+	font-weight: 500;
+	width: 60%;
+		margin-left: 10px;
+padding-top: 20px;
 }
 
 .sign {
 	color: rgb(26, 37, 63);
 
     display: flow-root;
-    float: unset;
-    padding-left: 15%;
+    padding-left: 25%;
 }
 
 .hidden {
@@ -105,7 +110,7 @@ transition: color $duration $duration/3;
 
 .draw-border-two {
 
-  @include btn-border-drawing(none,rgb(242, 185, 174), 4px, bottom, right);
+  @include btn-border-drawing(none,rgb(26, 37, 63), 4px, bottom, right);
 }
 
 
@@ -113,19 +118,19 @@ transition: color $duration $duration/3;
 //=== Button styling, semi-ignore
 .btn{
 display:block !important;
-	color:rgb(242, 185, 174)!important;
-	background-color: rgb(26, 37, 63)!important;
-	opacity: 0.85!important;
+	color:rgb(26, 37, 63)!important;
+//	background-color: rgb(26, 37, 63)!important;
+	
 	height: 50px!important;
 	font-size: 25px!important;
-	width:100px!important;
-	text-align: center!important;
+	width:120px!important;
+padding-top: 10px;
  //padding: 1em 1em  !important;
   letter-spacing: 0.07rem!important;
-	font-weight: 1000!important;
-	margin-top: 10px;
+	font-weight: 100!important;
+	margin-top: 20px;
 	margin-bottom: 20px;
-	font:400 75px 'Amatic SC', cursive;
+font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
 border: 0 solid transparent;
 
@@ -136,11 +141,13 @@ display:block;
 font-size: 10px;
 	opacity: 0.75;
 border:none;
-	width: 35px;
+	width: 45px;
 	text-align: center;
-  padding: 1em 1em;
+  padding:15px;
   letter-spacing: 0.05rem;
-	font-weight: 1000;
+	font-weight: 100;
+
+	margin-bottom: 20px;
   color: rgb(242, 185, 174);
 
 }
@@ -150,7 +157,9 @@ border:none;
 
 h2 {
 	font-size: 10px;
-	color:rgb(242, 185, 174);
+	font-weight: 100;
+	letter-spacing: 0.01em;
+	color:rgb(26, 37, 63)!important;
 }
 
 .upButton{

@@ -34,10 +34,13 @@ class App extends React.Component {
 	
 	render() {
 		return ( 
+			<div>
+			
 			<div className = 'App'>
-				<img className="hero" src={`https://i.ibb.co/jRRMQsN/Untitledff.png`} alt="Logo" />
-				<div  hidden={this.state.hidediv}>
+			
+		<div className="hero">
 					<div className="Header" >
+			<h5>ADVENTURE AHEAD </h5>
 						<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights in <br></br>the city you are visiting,add them to your Bucketlist and then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
 					</div>
 					<div className="sign" >
@@ -45,7 +48,8 @@ class App extends React.Component {
 							<h2> Don't have a user? Sign Up here </h2>
 						<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.handleToggleClick()}> Sign Up </Link>
 					</div>
-				</div>  
+</div>
+			
 				<Route path='/' exact component={HomePage} />
 				<PrivateRoute path='/search' exact component={MainPage} />
 				<PrivateRoute path='/bucketList' exact component={BucketList} />
@@ -53,6 +57,7 @@ class App extends React.Component {
 			 	<PublicOnlyRoute path='/signup' exact component={SignUpForm} />
 			 	<PublicOnlyRoute path='/login'  exact component={LoginForm} />
 			</div>
+</div>
 		);
 	}
 }
