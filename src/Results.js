@@ -74,7 +74,7 @@ class Results extends React.Component {
         return (
 			<form onSubmit = {e => this.handleSubmit(e)}>
           		<li key={index}>
-					<h7>{items.name} </h7> 
+					<h7>"{items.name}" </h7> 
 					<h8>{items.snippet} </h8>
 					<button type="submit" className="btn4 draw-border"  onClick={() => this.setState({id:items.id,name:items.name,snippet:items.snippet})}> Add to bucket list </button>
 

@@ -172,7 +172,7 @@ class SignUpForm extends React.Component {
                 <form className='sign-up-main' onSubmit={this.handleAddUser}>
 			
                     <fieldset className='sign-up-fieldset'>
-			  <h3>Sign up to get the best of your next Trip!</h3>
+			  <h4>Sign up to get the best of your next Trip!</h4>
                         <label>First Name</label>
                         <input
                             type='text'

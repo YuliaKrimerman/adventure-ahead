@@ -135,7 +135,7 @@ export default class BucketList extends Component{
 			<div>	
 			
 				<ul>						  
-					<li key={id}><h7>{items.name} </h7>
+					<li key={id}><h7>"{items.name}" </h7>
 					</li>
 					<li key={id}><h8>{items.snippet}</h8>
 					</li>
@@ -150,7 +150,7 @@ export default class BucketList extends Component{
 			<div>
 			<Nav />
 			<fieldset>
-				<h9>Your Bucketlist </h9>
+				<h4>MY BUCKETLIST </h4>
 			{newOne}
 			
 				<form className="userInput" onSubmit={e => this.handlePost(e)}>

@@ -90,7 +90,7 @@ class MainPage extends React.Component {
 			<fieldset>
 						<form onSubmit = {e => this.handleSubmit(e)} >
 							<div className = "search-section top" >
-								<h4>Search for local Higlights in your destination city </h4>
+								<h4>SEARCH FOR LOCAL HIGHLIGHTS IN <br></br> YOUR DESTINATION CITY </h4>
 								<input required className = "search__input"
 						   				placeholder = "Where is your Trip to?"
 				           				type = "text"
