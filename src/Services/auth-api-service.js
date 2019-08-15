@@ -2,7 +2,7 @@
 
 const AuthApiService = {
   postLogin(credentials) {
-    return fetch(`http://localhost:8000/login`, {
+    return fetch(`https://adventure-ahead.herokuapp.com/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -16,7 +16,7 @@ const AuthApiService = {
       )
   },
   postUser(user) {
-    return fetch(`http://localhost:8000/user`, {
+    return fetch(`https://adventure-ahead.herokuapp.com/user`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

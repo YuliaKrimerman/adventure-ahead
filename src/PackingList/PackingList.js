@@ -31,7 +31,7 @@ export default class PackingList extends Component{
 				"checked":true
 			}
 		
-		let url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}/${newId}`
+		let url = `https://adventure-ahead.herokuapp.com/packData/${TokenService.getUserId('userid')}/${newId}`
 		console.log(url,newId)
 			fetch(url, {
 					method: 'PATCH',
@@ -59,7 +59,7 @@ export default class PackingList extends Component{
 	// fetches again the list with the updated data and calls function that will only show data that is "checked"
 	
 fetchNewPackList() {
-	const url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}`
+	const url = `https://adventure-ahead.herokuapp.com/packData/${TokenService.getUserId('userid')}`
 			fetch(url)
 			.then(response => {
 				if (!response.ok) {
@@ -98,7 +98,7 @@ renderUpdated(data){
 	//fetches the list of all items on the list for the first time, calls function to display data
 	
 	fetchPackList() {
-	const url = `http://localhost:8000/packData/${TokenService.getUserId('userid')}`
+	const url = `https://adventure-ahead.herokuapp.com/packData/${TokenService.getUserId('userid')}`
 			fetch(url)
 			.then(response => {
 				if (!response.ok) {
