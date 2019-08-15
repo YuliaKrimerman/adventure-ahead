@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Results from '../Results/Results'
 import Nav from '../Nav/Nav'
@@ -113,4 +114,5 @@ class MainPage extends React.Component {
 		);
 	}
 }
+
 export default MainPage;

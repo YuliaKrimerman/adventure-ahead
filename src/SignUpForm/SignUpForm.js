@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AuthApiService from '../Services/auth-api-service';
 import ValidationError from '../ValidationError';
@@ -222,5 +223,6 @@ class SignUpForm extends React.Component {
         )
     }
 }
+
 
 export default SignUpForm;

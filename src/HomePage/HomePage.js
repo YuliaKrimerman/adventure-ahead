@@ -1,3 +1,4 @@
+
 import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import TokenService from '../Services/token-service';
@@ -56,5 +57,4 @@ class HomePage extends React.Component {
         )
     }
 }
-
 export default HomePage;

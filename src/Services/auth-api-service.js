@@ -1,4 +1,5 @@
 
+
 const AuthApiService = {
   postLogin(credentials) {
     return fetch(`http://localhost:8000/login`, {
@@ -29,5 +30,6 @@ const AuthApiService = {
       )
   },
 }
+
 
 export default AuthApiService
