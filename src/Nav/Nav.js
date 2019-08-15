@@ -21,7 +21,7 @@ export default class Nav extends Component {
             </div>
         )
     }
-    
+   
 // display link in header to register/sign up 
     renderLoginLink() {
         return (
