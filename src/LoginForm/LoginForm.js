@@ -141,7 +141,7 @@ class LoginForm extends React.Component {
                         	/>
                         	<ValidationError hasError={!this.state.passwordValid} message={this.state.validationMessages.password} />
                         	<div className="error" role="alert">
-                            	{error && <span className="login-error">{error}</span>}
+                            	
                             	<p>*Email/Password are case sensitive</p>
                         	</div>
                         	<button type="submit" className='btn3 draw-border'>Sign In</button>
@@ -154,8 +154,9 @@ class LoginForm extends React.Component {
                 	</form>
             	</div>
 			</div>
+
         )
     }
 }
-}
+
 export default LoginForm;
