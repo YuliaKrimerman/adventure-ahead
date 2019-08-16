@@ -52,7 +52,7 @@ export default class BucketList extends Component{
 				"snippet": this.state.snippet,
 			 	"user_id": TokenService.getUserId('userid')
 			}
-			fetch(`https://adventure-ahead.herokuapp.com/listTravel/${TokenService.getUserId('userid')}/`, {
+			fetch(`https://blooming-stream-59570.herokuapp.com/listTravel/${TokenService.getUserId('userid')}/`, {
 					method: 'POST',
 					body: JSON.stringify(usersData),
 					headers: {
@@ -77,7 +77,7 @@ export default class BucketList extends Component{
 
 	deleteUserData(id){
 		console.log(id)
-			fetch(`https://adventure-ahead.herokuapp.com/listTravel/${TokenService.getUserId('userid')}/${id}`, {
+			fetch(`https://blooming-stream-59570.herokuapp.com/listTravel/${TokenService.getUserId('userid')}/${id}`, {
 					method: 'DELETE',
 					body: JSON.stringify(id),
 					headers: {
@@ -97,7 +97,7 @@ export default class BucketList extends Component{
 		}
 	// fetches the usersr bucketlist from the DB
 	fetchList() {
-	const url = `https://adventure-ahead.herokuapp.com/listTravel/${TokenService.getUserId('userid')}`
+	const url = `https://blooming-stream-59570.herokuapp.com/listTravel/${TokenService.getUserId('userid')}`
 			fetch(url)
 			.then(response => {
 				if (!response.ok) {

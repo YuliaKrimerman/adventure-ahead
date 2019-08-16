@@ -40,7 +40,7 @@ class Results extends React.Component {
 	// post the data that was chosen by the user to the DB
 		postTravelData(travelData) {
 			const newJwt = this.currentToken
-					fetch(`https://adventure-ahead.herokuapp.com/listTravel`, {
+					fetch(`https://blooming-stream-59570.herokuapp.com/listTravel`, {
 					method: 'POST',
 					body: JSON.stringify(travelData),
 					headers: {

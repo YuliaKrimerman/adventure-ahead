@@ -2,7 +2,7 @@
 
 const AuthApiService = {
   postLogin(credentials) {
-    return fetch(`https://adventure-ahead.herokuapp.com/login`, {
+    return fetch(`https://blooming-stream-59570.herokuapp.com/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -16,7 +16,7 @@ const AuthApiService = {
       )
   },
   postUser(user) {
-    return fetch(`https://adventure-ahead.herokuapp.com/user`, {
+    return fetch(`https://blooming-stream-59570.herokuapp.com/user`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
