@@ -36,6 +36,7 @@ export default class PackingList extends Component{
 			fetch(url, {
 					method: 'PATCH',
 					body: JSON.stringify(usersData),
+			
 					headers: {
 					'Content-Type': 'application/json',
 						'Authorization': `bearer ${TokenService.getAuthToken()}`
@@ -59,8 +60,9 @@ export default class PackingList extends Component{
 	// fetches again the list with the updated data and calls function that will only show data that is "checked"
 	
 fetchNewPackList() {
-	const url = `https://ancient-tundra-76934.herokuapp.com/packData/${TokenService.getUserId('userid')}`
+	const url = `https://blooming-stream-59570.herokuapp.com/packData/${TokenService.getUserId('userid')}`
 			fetch(url)
+				
 			.then(response => {
 				if (!response.ok) {
 					throw new Error(response.statusText);
@@ -98,7 +100,7 @@ renderUpdated(data){
 	//fetches the list of all items on the list for the first time, calls function to display data
 	
 	fetchPackList() {
-	const url = `https://ancient-tundra-76934.herokuapp.com/packData/${TokenService.getUserId('userid')}`
+	const url = `https://blooming-stream-59570.herokuapp.com/packData/${TokenService.getUserId('userid')}`
 			fetch(url)
 			.then(response => {
 				if (!response.ok) {
