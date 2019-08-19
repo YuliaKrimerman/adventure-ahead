@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Adventure Ahead
+Adventure Ahead is an app that allows you to search for highlight places to visit in the cities aound the world and add them to your Bucketlist. Also it allows you to prepare to pack the bags for your trip with an ultimate Packing List. It uses Triposo API to facilitate the search features! Have Fun! <br>
+
+<a href="https://github.com/YuliaKrimerman/adventure-ahead-server" target="_blank">Adventure Ahead API Repo</a><br>
+<a href="https://github.com/YuliaKrimerman/adventure-ahead" target="_blank">Adventure Ahead Client Repo</a><br>
+<a href="https://adventure-ahead.yuliakrimerman.now.sh" target="_blank">Live Adventure Ahead Application</a>
+
+
+## <u>User-stories, Screenshots</u>
+![user-storiess](https://user-images.githubusercontent.com/46899367/63277340-276d1a80-c273-11e9-8f79-5316d1cf251a.png)
+
+
+## <Center>Desktop view</center>
+#### Home page
+![1111](https://user-images.githubusercontent.com/46899367/63277453-5d120380-c273-11e9-8ffe-1ba5698f4f8d.png)
+
+#### Registration page
+![one](https://user-images.githubusercontent.com/46899367/63277780-f214fc80-c273-11e9-9b8b-346bac4dea96.png)
+#### Bucketlist
+![three](https://user-images.githubusercontent.com/46899367/63277787-f6411a00-c273-11e9-962a-99c54ad0a072.png)
+#### Packing List
+![four](https://user-images.githubusercontent.com/46899367/63277792-f8a37400-c273-11e9-9156-37b3c19c38db.png)
+
+
+
+## Built with
+  ### Front end
+    -HTML
+    -Javascript
+    -React
+    -CSS
+
+  ### Back end
+    -Node.js
+    -Express.js
+    -PostgreSQL
+    -Mocha and Chai for testing
+
+  ### 3rd Party API
+  #### Triposo
+  For issues or questions visit their API support page.
+  <a href="https://www.triposo.com/api/documentation/20181213/" target="_blank">Triposo Documentation</a><br>
+
+## Development road map
+  * See other's saved highlights and allow for sharing.
+  * Add and edit your own items for the Packing List
+
 
 ## Available Scripts
 
-In the project directory, you can run:
+### Node Js
+  ```npm install``` - Installs node modules<br>
+  ```npm run dev```- Starts development/node server<br>
+  ```npm test``` - Runs tests
 
-### `npm start`
+### React
+  ```npm install``` - Installs node modules<br>
+  ```npm test``` - Runs tests
+  ```npm start``` - Runs React App in development mode<br>
+  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.<br>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
