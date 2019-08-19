@@ -1,5 +1,5 @@
 # Adventure Ahead
-Adventure Ahead is an app that allows you to search for highlight places to visit in the cities aound the world and add them to your Bucketlist. Also it allows you to prepare to pack the bags for your trip with an ultimate Packing List. It uses Triposo API to facilitate the search features! Have Fun! <br>
+Adventure Ahead is an app that allows you to search for highlight places to visit in the cities around the world and add them to your Bucketlist. Also it allows you to prepare to pack the bags for your trip, with an ultimate Packing List. It uses Triposo API to facilitate the search features! Have Fun! <br>
 
 <a href="https://github.com/YuliaKrimerman/adventure-ahead-server" target="_blank">Adventure Ahead API Repo</a><br>
 <a href="https://github.com/YuliaKrimerman/adventure-ahead" target="_blank">Adventure Ahead Client Repo</a><br>
