@@ -2,11 +2,10 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-
 .sign-in-main {
+	font-family: 'Ubuntu', sans-serif;
 	height: 20%;
 	display: block;
-
 }
 
 fieldset {
@@ -20,37 +19,32 @@ fieldset {
 
 h4 {
 	font-family: 'Work Sans', sans-serif;
-	color: rgb(0, 0, 102);
-	font-size: 30px;
-	font-weight: 200;
+	color: rgb(26, 37, 63);
+	font-size: 35px;
+	font-weight: 350;
 	text-align: center;
-	margin-top: 20px;
 	letter-spacing: 0.05rem;
-
 }
 
 input {
-
+	width: 30%;
 	padding: 12px 24px;
 	transition: transform 250ms ease-in-out;
 	letter-spacing: 4px;
 	line-height: 18px;
 	border: none;
-	margin-bottom: 30px;
 	border-bottom: 1px solid black;
 	color: #575756;
 	background-color: lightgray;
-	font-size: 12px;
+	font-size: 10px;
 	text-align: center;
-	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 }
-
-input.search__input {
+input.search_input {
 	width:50%;
-	font-size: 12px;
 }
+
 
 
 .btn3 {
@@ -77,11 +71,8 @@ input.search__input {
 	font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
 	border: 1 solid transparent;
-
 }
 
 label {
 	padding: 15px;
-
 }
-
