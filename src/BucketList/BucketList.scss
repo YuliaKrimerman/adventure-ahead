@@ -12,7 +12,10 @@
 	margin-top: 10px;
 	text-align: center;
 }
-
+input {
+border-right: 1px solid black;
+	font-size: 12px;
+}
 h6 {
 	margin-bottom: -10px;
 }
@@ -68,6 +71,9 @@ li {
 	text-align: center;
 }
 
+ul.Results {
+	padding: 0;
+}
 
 @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
 	box-shadow: inset 0 0 0 $width $color;
@@ -146,4 +152,12 @@ li {
 	margin: 20px;
 	color: rgb(242, 185, 174);
 
+}
+
+
+@media only screen and (max-width: 480px) {
+	h7 {
+		font-size: 20px;
+		margin-right: 10px;
+	}
 }
