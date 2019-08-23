@@ -104,10 +104,9 @@ li {
 }
 
 
-
 //=== Button styling, semi-ignore
 .btn4 {
-	display: list-item;
+	display: table-footer-group;
 	font-size: 10px;
 	opacity: 0.75;
 	border: none;
@@ -120,4 +119,13 @@ li {
 	margin: 20px;
 	color: rgb(242, 185, 174);
 
+}
+
+
+
+@media only screen and (max-width: 480px) {
+button.btn4{
+	display:table-footer-group;
+
+}
 }
