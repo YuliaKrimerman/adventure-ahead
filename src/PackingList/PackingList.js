@@ -32,7 +32,6 @@ export default class PackingList extends Component{
 			}
 		
 		let url = `https://blooming-stream-59570.herokuapp.com/packData/${TokenService.getUserId('userid')}/${newId}`
-		console.log(url,newId)
 			fetch(url, {
 					method: 'PATCH',
 					body: JSON.stringify(usersData),
@@ -50,9 +49,7 @@ export default class PackingList extends Component{
 							throw error
 						})
 					}
-			else {
-				console.log('Nothing Here')
-			}
+			
 				})
 		window.location.reload()
 	}
@@ -90,9 +87,6 @@ renderUpdated(data){
 				this.setState ({
 				  newData:newOnes
 			})
-			} else
-			{
-				console.log('nothing here')
 			}
 
 }
@@ -125,9 +119,7 @@ renderUpdated(data){
 			data:data
 		});
 		}
-			else {
-				console.log('nothing here')
-			}
+			
 	}
 
 	render() {
@@ -144,26 +136,26 @@ renderUpdated(data){
 			</div>
 				)	
 		return (
-			<div>
-				<Nav />
-				{this.fetchPackList()}
-				{this.fetchNewPackList()}
-				{this.selectedData}
-				<div className="text-box">
-					<div className="scrollbar"  id="style-4">
-			  			<h4>ITEMS TO PACK </h4>
-							{newTwo}
-					</div>
-				</div>
-				<div className="text-box2">
-				<div className="scrollbar"  id="style-4">
-					<ul id="special">
-  						<h4>PACKED ITEMS</h4> {selectedData.map((d, idx) =>
-         					<li key={idx}>{d.list}</li>)} 
-					</ul>
-				</div>
-				</div>
-			</div>
+<div>
+	<Nav />
+	{this.fetchPackList()}
+	{this.fetchNewPackList()}
+	{this.selectedData}
+	<div className="text-box">
+		<div className="scrollbar" id="style-4">
+			<h4>ITEMS TO PACK </h4>
+			{newTwo}
+		</div>
+	</div>
+	<div className="text-box2">
+		<div className="scrollbar" id="style-4">
+			<ul id="special">
+				<h4>PACKED ITEMS</h4> {selectedData.map((d, idx) =>
+				<li key={idx}>{d.list}</li>)}
+			</ul>
+		</div>
+	</div>
+</div>
 		)
 	}
 }

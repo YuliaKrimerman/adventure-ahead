@@ -1,7 +1,7 @@
 .scrollbar {
 	float: left;
 	height: 300px;
-	max-width: 100%;
+	width: 100%;
 	background: rgb(242, 185, 174);
 	overflow-y: scroll;
 	margin-bottom: 25px;
@@ -50,12 +50,14 @@
 	letter-spacing: 0.05rem;
 	font-weight: 100;
 	left: 30%;
-	margin: 20px;
+
 	color: rgb(242, 185, 174);
 }
 
 h4 {
 	font-weight: 200;
+
+
 }
 
 .userUpdate {
@@ -64,4 +66,81 @@ h4 {
 
 ul#special {
 	margin-right: 30px;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+
+	.text-box {
+		padding-left: 30px;
+		display: block;
+		margin-top: 30px;
+		width: 45%;
+		align-content: flex-start;
+		margin-right: 5%;
+	}
+
+
+	.text-box2 {
+		padding-right: 30px;
+		display: block;
+		width: 45%;
+		float: right;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.btn5 {
+
+		margin-right: auto;
+
+	}
+
+	.text-box {
+		float: none;
+		width: 48%;
+		padding-left: 0;
+	}
+
+	.text-box2 {
+		width: 48%;
+		float: right;
+		padding-right: 0;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+	h4 {
+		font-size: 25px;
+	}
+
+	.btn5 {
+		margin-left: auto;
+		left: 0;
+		width: 130px;
+		margin-right: auto;
+	}
+
+	.text-box {
+		float: none;
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.text-box2 {
+		width: 100%;
+		float: none;
+		padding-right: 10px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.btn5 {
+
+		width: 130px;
+	}
+
+
 }
