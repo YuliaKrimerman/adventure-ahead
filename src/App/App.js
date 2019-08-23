@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Route ,Link } from 'react-router-dom'
 import MainPage from '../MainPage/MainPage'
 import SignUpForm from '../SignUpForm/SignUpForm';
 import LoginForm from '../LoginForm/LoginForm';
-import TokenService from '../Services/token-service';
 import BucketList from '../BucketList/BucketList';
 import PackingList from '../PackingList/PackingList';
-import Nav from '../Nav/Nav'
 import './App.scss';
 import PublicOnlyRoute from '../Routes/PublicOnlyRoute';
 import PrivateRoute from '../Routes/PrivateOnlyRoute';
@@ -32,24 +30,20 @@ class App extends React.Component {
 	
 	
 	render() {
-		 const { isBoxVisible } = this.state;
-			return ( 
+		return ( 
 			<div>
 				<div className = 'App'>
 					<div className="hero">
 						<div className="Header" >
 							<h5>ADVENTURE AHEAD </h5>
-							<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights in <br></br>the city you are visiting,add them to your Bucketlist and  <br></br>then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
+							<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights to visit and <br></br>then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
 						</div>
-					<div className={'isBoxVisible ? "" : " hidden"'}>
-						<div className="sign" >
+						<div className="sign" hidden= {!this.state.isBoxVisible} >
 							<Link to='/login' className="btn draw-border" onClick={e =>this.toggleBox()} > Sign In </Link>
 								<h2> Don't have a user? Sign Up here </h2>
 							<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.toggleBox()}> Sign Up </Link>
 						</div>
-					</div>
 				</div>
-			
 				<Route path='/' exact component={HomePage} />
 				<PrivateRoute path='/search' exact component={MainPage} />
 				<PrivateRoute path='/bucketList' exact component={BucketList} />
