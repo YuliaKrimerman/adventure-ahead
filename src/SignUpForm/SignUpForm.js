@@ -3,7 +3,7 @@ import React from 'react';
 import AuthApiService from '../Services/auth-api-service';
 import ValidationError from '../ValidationError';
 import './SignUpForm.scss'
-import { Route ,Link } from 'react-router-dom'
+
 
 class SignUpForm extends React.Component {
     constructor(props) {
