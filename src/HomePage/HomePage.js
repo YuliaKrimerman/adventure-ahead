@@ -1,11 +1,5 @@
-
 import React from 'react';
-import LoginForm from '../LoginForm/LoginForm';
 import TokenService from '../Services/token-service';
-import BucketList from '../BucketList/BucketList';
-import PackingList from '../PackingList/PackingList';
-import { Route ,Link } from 'react-router-dom';
-import Nav from '../Nav/Nav'
 import './HomePage.css';
 import MainPage from '../MainPage/MainPage';
 
