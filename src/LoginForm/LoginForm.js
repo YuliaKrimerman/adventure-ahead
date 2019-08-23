@@ -4,8 +4,6 @@ import './LoginForm.scss'
 import AuthApiService from '../Services/auth-api-service'
 import TokenService from '../Services/token-service'
 import ValidationError from '../ValidationError'
-import { Route ,Link ,Redirect } from 'react-router-dom'
-import Nav from '../Nav/Nav'
 
 class LoginForm extends React.Component {
     static defaultProps = {
@@ -114,7 +112,6 @@ class LoginForm extends React.Component {
     }
 
     render() {
-        const { error } = this.state;
         return (
 			<div>
             	<div className="login-form" >
@@ -122,7 +119,7 @@ class LoginForm extends React.Component {
 						<fieldset className='login-fieldset'>
                         	<h4 className='sign-in-legend'>Account Log In</h4>
                         	<label htmlFor='email-input' className='sign-in-email'>Email</label>
-                        	<input
+                        	<input required
                             	type='text'
                             	name='email'
                             	id='email-input'
@@ -132,7 +129,7 @@ class LoginForm extends React.Component {
                         	<ValidationError className='validation-error'
                             	hasError={!this.state.emailValid} message={this.state.validationMessages.email} />
                         	<label htmlFor='password-input' className='sign-in-password'>Password</label>
-                        	<input
+                        	<input required
                             	type='password'
                             	name='password'
                             	id='password-input'
