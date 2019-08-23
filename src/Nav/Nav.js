@@ -9,18 +9,7 @@ export default class Nav extends Component {
         TokenService.clearAuthToken()
     }
 		
-	renderLogoutLink() {
-        return (
-            <div className='header-logged-in'>
-                <Link
-                    className='logout-link'
-                    onClick={this.handleLogoutClick}
-                    to='/'>
-                    <span title='Logout'></span>
-                </Link>
-            </div>
-        )
-    }
+
    
 // display link in header to register/sign up 
     renderLoginLink() {
@@ -38,30 +27,22 @@ export default class Nav extends Component {
 		
   render() {
     return (
-      <div className='Nav'>
-        <li><a href='/search'>
-          Search     
-        </a></li>
-       <li> <a href='/bucketlist'>
-          Bucketlist   
-        </a></li>
-		<li> <a href='/packinglist'> 
-          Packing List
-        </a></li>
-		<li>  
-            <a href='/'
-                    className='logout-link'
-                    onClick={this.handleLogoutClick}
-                    to='/'>
-                    Log out
-              
-        </a></li>
-                <nav role="navigation">
-                    {TokenService.hasAuthToken()
-                        ? this.renderLogoutLink()
-                        : this.renderLoginLink()}
-                </nav>
-      </div>
-    )
-  }
+		<div className='Nav'>
+			<li><a href='/search'>
+				Search
+				</a></li>
+			<li> <a href='/bucketlist'>
+				Bucketlist
+				</a></li>
+			<li> <a href='/packinglist'>
+				Packing List
+				</a></li>
+			<li>
+				<a href='/' className='logout-link' onClick={this.handleLogoutClick} to='/'>
+					Log out
+				</a>
+			</li>
+		</div>
+  )
 }
+		}
