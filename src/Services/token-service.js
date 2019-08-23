@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import config from '../config';
 const jwtDecode = require('jwt-decode');
 
