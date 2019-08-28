@@ -3,19 +3,14 @@ import TokenService from '../Services/token-service';
 import './Results.scss';
 
 
-
-
 class Results extends React.Component {
 		constructor(props) {
 			super(props);
 			this.state = {
 				snippet: '',
 				name: '',
-				
 				user_id:''
 			}
-			
-			
 		}
 	// handle the form submission
 		handleSubmit(e) {
@@ -81,7 +76,7 @@ class Results extends React.Component {
 		return (
 			<div>
 				<div className="text-box3">
-					<div className="scrollbar3"  id="style-4">
+					<div className="scrollbarff"  id="style-4">
 						{tripDataResults}
 					</div>
 				</div>
