@@ -27,7 +27,7 @@ export default class Nav extends Component {
 		
   render() {
     return (
-		<div className='Nav'>
+		<div className='Nav' aria-label="Primary">
 			<li><a href='/search'>
 				Search
 				</a></li>
@@ -37,11 +37,9 @@ export default class Nav extends Component {
 			<li> <a href='/packinglist'>
 				Packing List
 				</a></li>
-			<li>
-				<a href='/' className='logout-link' onClick={this.handleLogoutClick} to='/'>
+			<li><a href='/' className='logout-link' onClick={this.handleLogoutClick} to='/'>
 					Log out
-				</a>
-			</li>
+				</a></li>
 		</div>
   )
 }
