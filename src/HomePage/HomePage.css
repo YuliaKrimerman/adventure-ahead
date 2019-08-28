@@ -2,4 +2,104 @@
 .hidden { display:none; }
 
 
+div.hero1{
+	height: 100%;
+		background: url(https://i.ibb.co/FY6w4Jm/2395318.jpg);
+	background-size: cover;
+	opacity: 0.87;
+	background-attachment: fixed;
+}
+
+body {
+	background: rgb(26, 37, 63);
+}
+
+.hero {
+	background: url(https://i.ibb.co/FY6w4Jm/2395318.jpg);
+	background-size: cover;
+	opacity: 0.87;
+	background-attachment: fixed;
+	height: 450px;
+}
+
+.logo {
+	width: 10%;
+	text-align: center;
+	overflow: visible;
+}
+
+h5 {
+	font-size: 50px;
+	text-align: center;
+	color: rgb(26, 37, 63);
+	letter-spacing: 0.2em;
+	font-weight: 100;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+
+h1 {
+	text-align: center;
+	line-height: 1.5;
+	color: rgb(26, 37, 63);
+	font-size: 20px;
+	font-weight: 500;
+	width: 60%;
+	margin-left: 10px;
+	padding-top: 20px;
+}
+
+.sign {
+	color: rgb(26, 37, 63);
+background: none;
+	display: flow-root;
+
+}
+
+.hidden {
+	display: none;
+}
+
+@media only screen and (max-width: 768px) {
+	
+		.hero,div.hero1 {
+		background-size: 900px;
+		background-position: buttom;
+	}
+	
+	h1 {
+		width: 90%;
+		font-size: 20px;
+	}
+
+
+}
+
+@media only screen and (max-width: 480px) {
+	.hero,div.hero1 {
+		background-size: cover;
+		background-position: top;
+	}
+
+	h5 {
+		font-size: 35px;
+	}
+
+	h1 {
+		width: 90%;
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.hero,div.hero1 {
+		background-position: top;
+		background-size: 820px;
+	}
+	
+		h1 {
+		width: 90%;
+		font-size: 15px;
+	}
+}
 
