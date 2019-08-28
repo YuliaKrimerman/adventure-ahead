@@ -173,10 +173,12 @@ class SignUpForm extends React.Component {
                 <form className='sign-up-main' onSubmit={this.handleAddUser}>
 			
                     <fieldset className='sign-up-fieldset'>
-			  <h4>Sign up to get the best of your next Trip!</h4>
+			  			<h4>Sign up to get the best of your next Trip!</h4>
                         <label>First Name</label>
                         <input
                             type='text'
+							aria-label="name"
+  							aria-required="true"
                             name='first_name'
                             id='first-name-input'
                             onChange={e => this.addFirstName(e.target.value)}
@@ -186,6 +188,8 @@ class SignUpForm extends React.Component {
                         <label>Last Name</label>
                         <input
                             type='text'
+							aria-label="last name"
+  							aria-required="true"
                             name='last_name'
                             id='last-name-input'
                             onChange={e => this.addLastName(e.target.value)}
@@ -195,6 +199,8 @@ class SignUpForm extends React.Component {
                         <label>Email</label>
                         <input
                             type='text'
+							aria-label="email"
+  							aria-required="true"
                             name='email'
                             id='email-input'
                             onChange={e => this.addEmail(e.target.value)}
@@ -203,6 +209,8 @@ class SignUpForm extends React.Component {
                         <label>Password</label>
                         <input
                             type='text'
+							aria-label="password"
+  							aria-required="true"
                             name='password'
                             id='password-input'
                             onChange={e => this.addPassword(e.target.value)}
