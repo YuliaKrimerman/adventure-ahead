@@ -88,24 +88,35 @@ class MainPage extends React.Component {
 
 	render() {
 		return ( 
-<div>
-	<Nav />
-	<div className='Appy'>
+			<div>
+				<div className="hero">
+					<div className="Header" >
+						<h5>ADVENTURE AHEAD </h5>
+						<h1>Look up for local Higlights in yor destination city,<br></br> add them to your Bucketlist, <br></br> and then pack your luggage with the Packing List. </h1>
+					</div>
+				</div>
+			<Nav />
+	<div className='Appy'>	
 		<fieldset>
 			<form onSubmit={e=> this.handleSubmit(e)} >
 				<div className="search-section top">
 					<h4>SEARCH FOR LOCAL HIGHLIGHTS IN <br></br> YOUR DESTINATION CITY </h4>
-					<input required className="search__input" placeholder="Where are you going?" type="text" onChange={e=> this.searchTermUpdate(e.target.value)}/>
+					<input required 
+					aria-label="labelText"
+					aria-required="true" 
+					className="search__input"
+					placeholder="Where are you going?"
+					type="text" 
+					onChange={e=> this.searchTermUpdate(e.target.value)}/>
 				</div>
 				<div className="buttons-coll">
-					<button type="submit" className="btn3 draw-border">
-						<span>
+					<button 
+						type="submit" 
+						className="btn3 draw-border">
 							Search
-						</span>
 					</button>
 				</div>
 			</form>
-
 			<Results itemsDisplay={this.state.tripData} />
 		</fieldset>
 	</div>
