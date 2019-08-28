@@ -77,7 +77,6 @@ export default class BucketList extends Component{
 	// deletes the selected item on the bucketlist from the DB
 
 	deleteUserData(id){
-		console.log(id)
 			fetch(config.API_ENDPOINT + `listTravel/${TokenService.getUserId('userid')}/${id}`, {
 					method: 'DELETE',
 					body: JSON.stringify(id),
@@ -127,8 +126,6 @@ export default class BucketList extends Component{
 	}
 
 	
-	
-	
 	render() {
 		const newOne = this.state.data.map((items, id) => 
 			<div>	
@@ -138,13 +135,19 @@ export default class BucketList extends Component{
 					<li key={id}><h8>{items.snippet}</h8>
 					</li>
 				 	<form className="deleteFromList" onSubmit={e => this.handleSubmit(e)}>
-					<button className="btn3 draw-border" type="submit"  onClick={() => this.handleClick(items.id)} className="deleteItemButton">DELETE</button>	
+					<button className="btn3 draw-border" type="submit" onClick={() => this.handleClick(items.id)} className="deleteItemButton">DELETE</button>	
 					</form>
 				</ul>
 			</div>
 		)
 		return (
 			<div>
+				<div className="hero">
+					<div className="Header" >
+						<h5>ADVENTURE AHEAD </h5>
+						<h1>Look up for local Higlights in yor destination city,<br></br> add them to your Bucketlist, <br></br> and then pack your luggage with the Packing List. </h1>
+					</div>
+			</div>
 				<Nav />
 					<fieldset>
 						<h4>MY BUCKETLIST </h4>
