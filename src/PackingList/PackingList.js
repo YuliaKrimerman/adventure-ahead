@@ -137,6 +137,12 @@ renderUpdated(data){
 				)	
 		return (
 <div>
+							<div className="hero">
+						<div className="Header" >
+							<h5>ADVENTURE AHEAD </h5>
+							<h1>Look up for local Higlights in yor destination city,<br></br> add them to your Bucketlist, <br></br> and then pack your luggage with the Packing List. </h1>
+							</div>
+			</div>
 	<Nav />
 	{this.fetchPackList()}
 	{this.fetchNewPackList()}
