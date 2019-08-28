@@ -11,7 +11,8 @@ const AuthApiService = {
     })
       .then(response =>
         (!response.ok)
-          ? response.json().then(e => Promise.reject(e))
+          ? response.json().then(e => Promise.reject(e),
+								alert('Credentials not found'))
           : response.json()
       )
   },
