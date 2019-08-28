@@ -121,6 +121,8 @@ class LoginForm extends React.Component {
                         	<label htmlFor='email-input' className='sign-in-email'>Email</label>
                         	<input required
                             	type='text'
+								aria-label="email"
+  								aria-required="true"
                             	name='email'
                             	id='email-input'
                             	value={this.state.email}
@@ -131,6 +133,8 @@ class LoginForm extends React.Component {
                         	<label htmlFor='password-input' className='sign-in-password'>Password</label>
                         	<input required
                             	type='password'
+								aria-label="password"
+  								aria-required="true"
                             	name='password'
                             	id='password-input'
                             	value={this.state.password}
@@ -143,7 +147,7 @@ class LoginForm extends React.Component {
                         	</div>
                         	<button type="submit" className='btn3 draw-border'>Sign In</button>
                         	<section className='demo-login-info'>
-                            	<h2>Demo login info:</h2>
+                            	<p>Demo login info:</p>
                             	<p>Email: testuser101@email.com</p>
                             	<p>Password: Testuser101!</p>
                         	</section>
