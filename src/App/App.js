@@ -1,15 +1,15 @@
 import React from 'react'
-import { Route ,Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import MainPage from '../MainPage/MainPage'
 import SignUpForm from '../SignUpForm/SignUpForm';
 import LoginForm from '../LoginForm/LoginForm';
 import BucketList from '../BucketList/BucketList';
 import PackingList from '../PackingList/PackingList';
 import './App.scss';
+import './App.css';
 import PublicOnlyRoute from '../Routes/PublicOnlyRoute';
 import PrivateRoute from '../Routes/PrivateOnlyRoute';
 import HomePage from '../HomePage/HomePage';
-
 
 
 class App extends React.Component {
@@ -28,22 +28,9 @@ class App extends React.Component {
     });
   }
 	
-	
 	render() {
 		return ( 
 			<div>
-				<div className = 'App'>
-					<div className="hero">
-						<div className="Header" >
-							<h5>ADVENTURE AHEAD </h5>
-							<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights to visit and <br></br>then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
-						</div>
-						<div className="sign" hidden= {!this.state.isBoxVisible} >
-							<Link to='/login' className="btn draw-border" onClick={e =>this.toggleBox()} > Sign In </Link>
-								<h2> Don't have a user? Sign Up here </h2>
-							<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.toggleBox()}> Sign Up </Link>
-						</div>
-				</div>
 				<Route path='/' exact component={HomePage} />
 				<PrivateRoute path='/search' exact component={MainPage} />
 				<PrivateRoute path='/bucketList' exact component={BucketList} />
@@ -51,7 +38,7 @@ class App extends React.Component {
 			 	<PublicOnlyRoute path='/signup' exact component={SignUpForm} />
 			 	<PublicOnlyRoute path='/login'  exact component={LoginForm} />
 			</div>
-		</div>
+
 		);
 	}
 }

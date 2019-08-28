@@ -1,11 +1,15 @@
 body {
 	background: rgb(26, 37, 63);
+
+
 }
 
 .hero {
 	background: url(https://i.ibb.co/FY6w4Jm/2395318.jpg);
 	background-size: cover;
+
 	opacity: 0.87;
+	background-attachment: fixed;
 }
 
 .logo {
@@ -37,9 +41,9 @@ h1 {
 
 .sign {
 	color: rgb(26, 37, 63);
-
+	background: none;
 	display: flow-root;
-	padding-left: 25%;
+
 }
 
 .hidden {
@@ -128,7 +132,7 @@ h1 {
 	font-family: 'Ubuntu', sans-serif;
 	box-sizing: border-box;
 	border: 0 solid transparent;
-
+	margin-left: 25%;
 }
 
 .btn2 {
@@ -144,7 +148,7 @@ h1 {
 	margin-top: -8px;
 	margin-bottom: 30px;
 	color: rgb(26, 37, 63);
-
+	margin-left: 25%;
 }
 
 .hidden {
@@ -157,6 +161,8 @@ h2 {
 	font-weight: 100;
 	letter-spacing: 0.01em;
 	color: rgb(26, 37, 63) !important;
+	padding-bottom: 10px;
+	margin-left: 22%;
 }
 
 .upButton {
