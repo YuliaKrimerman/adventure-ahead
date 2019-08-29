@@ -11,6 +11,8 @@
     "react-autocomplete": "^1.8.1",
     "react-dom": "^16.8.6",
     "react-gsap": "^1.2.0",
+    "react-loader-spinner": "^3.1.2",
+    "react-promise-tracker": "^2.0.5",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
@@ -23,7 +25,9 @@
     "deploy": "now ./build",
     "postdeploy": "now alias -A ./build/now.json"
   },
-
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
