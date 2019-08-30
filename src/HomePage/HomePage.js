@@ -27,7 +27,6 @@ class HomePage extends React.Component {
     renderLoggedInPath() {
         return (
             <section className='header-logged-in-profile'>
-
 				<MainPage />
 			 </section>
         )
@@ -37,16 +36,14 @@ class HomePage extends React.Component {
     renderLoginForm() {
         return (
 			<div>
-    		<div className="hero1">
-					
-			
-				<div className="sign" hidden= {!this.state.isBoxVisible}>
+    			<div className="hero1">
+					<div className="sign" hidden= {!this.state.isBoxVisible}>
 							<Link to='/login' className="btn draw-border" onClick={e =>this.toggleBox()} > Sign In </Link>
 								<h2> Don't have a user? Sign Up here </h2>
 							<Link to='/signup'  className="btn2 draw-border-two" onClick={e =>this.toggleBox()}> Sign Up </Link>
-						</div>
-</div>
-</div>
+					</div>
+				</div>
+			</div>
       )
     }
     render() {
@@ -56,9 +53,7 @@ class HomePage extends React.Component {
 						<div className="Header" >
 							<h5>ADVENTURE AHEAD </h5>
 							<h1>  Wanna be as ready as possible for your next trip? <br></br> Sign in, explore local highlights to visit and <br></br>then pack for the trip<br></br> with the ultimate Packing Checklist. </h1>
-							</div>
-			
-            	
+							</div>	
                 	{TokenService.hasAuthToken()
                     	? this.renderLoggedInPath()
 						: this.renderLoginForm()}
