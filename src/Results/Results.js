@@ -44,7 +44,6 @@ class Results extends React.Component {
 				})
 
 				.then(res => {
-						console.log(res)
 					if (!res.ok) {
 						// get the error message from the response,
 						return res.json().then(error => {
