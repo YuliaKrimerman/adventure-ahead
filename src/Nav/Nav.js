@@ -12,7 +12,7 @@ export default class Nav extends Component {
 
    
 // display link in header to register/sign up 
-    renderLoginLink() {
+  renderLoginLink() {
         return (
             <div className='header-logged-out'>
                 <Link
@@ -41,6 +41,6 @@ export default class Nav extends Component {
 					Log out
 				</a></li>
 		</div>
-  )
+  	)
+  }
 }
-		}
