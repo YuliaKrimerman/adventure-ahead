@@ -135,7 +135,7 @@ export default class BucketList extends Component{
 					<li key={id}><h8>{items.snippet}</h8>
 					</li>
 				 	<form className="deleteFromList" onSubmit={e => this.handleSubmit(e)}>
-					<button className="btn3 draw-border" type="submit" onClick={() => this.handleClick(items.id)} className="deleteItemButton">DELETE</button>	
+					<button className="btn3 draw-border" type="submit" onClick={() => this.handleClick(items.id)}>DELETE</button>	
 					</form>
 				</ul>
 			</div>
