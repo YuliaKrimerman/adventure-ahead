@@ -136,32 +136,32 @@ renderUpdated(data){
 			</div>
 				)	
 		return (
-<div>
-							<div className="hero">
-						<div className="Header" >
-							<h5>ADVENTURE AHEAD </h5>
-							<h1>Look up for local Higlights in yor destination city,<br></br> add them to your Bucketlist, <br></br> and then pack your luggage with the Packing List. </h1>
-							</div>
+			<div>
+				<div className="hero">
+					<div className="Header" >
+						<h5>ADVENTURE AHEAD </h5>
+						<h1>Look up for local Higlights in yor destination city,<br></br> add them to your Bucketlist, <br></br> and then pack your luggage with the Packing List. </h1>
+					</div>
+				</div>
+			<Nav />
+			{this.fetchPackList()}
+			{this.fetchNewPackList()}
+			{this.selectedData}
+			<div className="text-box">
+				<div className="scrollbar" id="style-4">
+					<h4>ITEMS TO PACK </h4>
+					{newTwo}
+				</div>
 			</div>
-	<Nav />
-	{this.fetchPackList()}
-	{this.fetchNewPackList()}
-	{this.selectedData}
-	<div className="text-box">
-		<div className="scrollbar" id="style-4">
-			<h4>ITEMS TO PACK </h4>
-			{newTwo}
+			<div className="text-box2">
+				<div className="scrollbar" id="style-4">
+					<ul id="special">
+						<h4>PACKED ITEMS</h4> {selectedData.map((d, idx) =>
+							<li key={idx}>{d.list}</li>)}
+					</ul>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div className="text-box2">
-		<div className="scrollbar" id="style-4">
-			<ul id="special">
-				<h4>PACKED ITEMS</h4> {selectedData.map((d, idx) =>
-				<li key={idx}>{d.list}</li>)}
-			</ul>
-		</div>
-	</div>
-</div>
 		)
 	}
 }
