@@ -48,7 +48,6 @@ class MainPage extends React.Component {
 				if (response.ok) {
 					return response.json();
 				}
-				throw new Error(response.statusText)
 			})
 			.then(responseJSON => {
 				let searchCoord = responseJSON.results[0].geometry.location
@@ -71,14 +70,19 @@ class MainPage extends React.Component {
 			fetch(url)
 				.then(response => {
 					if (!response.ok) {
-						throw new Error(response.statusText);
+						throw new Error(response.statusText)
 					}
 					return response.json();
-				})
+				}
+					 )
 				.then(data => {
+					if(data.results[0].pois ==''){
+						alert('City not found, try something else')
+					}
 					this.setState({
 						tripData: data.results[0].pois
 					})
+					
 				})
 				.catch(err => {
 					console.log(err);
@@ -113,7 +117,7 @@ class MainPage extends React.Component {
 					<button 
 						type="submit" 
 						className="btn3 draw-border">
-							Search
+						Search
 					</button>
 				</div>
 			</form>
