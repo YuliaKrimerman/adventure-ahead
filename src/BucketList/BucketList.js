@@ -120,9 +120,6 @@ export default class BucketList extends Component{
 			this.setState({
 			data:data
 		})}
-			else {
-				console.log('nothing here')
-			}
 	}
 
 	
